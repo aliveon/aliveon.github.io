@@ -1,0 +1,682 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Oracle,物化视图," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="放逐，天涯路" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Oracle 物化视图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle物化视图">
+<meta property="og:url" content="http://aresLove.github.io/Oracle/Oracle物化视图/index.html">
+<meta property="og:site_name" content="放逐，天涯路">
+<meta property="og:description" content="Oracle 物化视图">
+<meta property="og:updated_time" content="2017-02-19T09:34:19.571Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle物化视图">
+<meta name="twitter:description" content="Oracle 物化视图">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://aresLove.github.io/Oracle/Oracle物化视图/"/>
+
+  <title> Oracle物化视图 | 放逐，天涯路 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">放逐，天涯路</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">永恒的心，经年的梦，前行的路，执念一生</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Oracle物化视图
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-19T17:34:19+08:00" content="2017-02-19">
+              2017-02-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">Oracle</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/Oracle/Oracle物化视图/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="Oracle/Oracle物化视图/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>客户提出：根据券号来查询相关券活动的信息，提供 REST 接口 供查询;由于 相关券活动 是由 第三方生成,下发到我们系统,再由 我们上传回客户,这中间 那个环节出现问题不清楚,等到发现问题再处理,客户项目上需求已经来不及;故此,客户希望我们系统提供相关 接口 供查询相关 券活动 生成和推送数据</p>
+<p>  –根据 券号<br>  查询<br>  –券号，模板，定义数量，已收到数据路，已推送数量</p>
+<p>问题：所查询表数据量非常巨大,响应性能必须解决</p>
+<h2 id="处理方法"><a href="#处理方法" class="headerlink" title="处理方法"></a>处理方法</h2><p>因为 couponactivity 券活动表 数据量非常大 已经达到数千万数量，为提高效应效率；采取将相关数据汇总到 物化视图 ，接口通过查询视图来返回相关数据信息 的策略</p>
+<h3 id="创建物化视图日志"><a href="#创建物化视图日志" class="headerlink" title="创建物化视图日志"></a>创建物化视图日志</h3><p>物化视图 日志 是 很容易建 成功的 , 但问题是 日志是能建成功 可物化视图 总会 报出 各种问题;经过反复 处理 报错的问题 查找 相关资料;<br>主要受益于 <a href="http://blog.itpub.net/20482996/viewspace-1251469/" target="_blank" rel="external">浅析为何Oracle物化视图对distinct, group by不支持快速刷新</a> 、 <a href="http://www.cnblogs.com/linjiqin/archive/2012/05/23/2514795.html" target="_blank" rel="external">oracle物化视图日志结构</a> 和 <a href="http://www.cnblogs.com/zyizyizyi/archive/2012/04/25/2497824.html" target="_blank" rel="external">Oracle物化视图</a>、<br><a href="http://www.cnblogs.com/juddhu/archive/2012/03/07/2383101.html" target="_blank" rel="external">oracle中的decode的使用</a></p>
+<h3 id="创建物化视图"><a href="#创建物化视图" class="headerlink" title="创建物化视图"></a>创建物化视图</h3><p>首先写出 符合 预期结果的 sql 语句,然后 以创建 增量方式快速刷新 的 物化视图为 目标  处理 解决 过程中 遇到的问题</p>
+<h4 id="最终实现的如下物化视图"><a href="#最终实现的如下物化视图" class="headerlink" title="最终实现的如下物化视图"></a>最终实现的如下物化视图</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建物化视图日志</span></span><br><span class="line"><span class="operator"><span class="keyword">create</span> <span class="keyword">materialized</span> <span class="keyword">view</span> <span class="keyword">log</span> <span class="keyword">on</span> couponactivity <span class="keyword">with</span> primary <span class="keyword">key</span>,<span class="keyword">sequence</span>,<span class="keyword">rowid</span>(projectcode,title,codeqty) <span class="keyword">including</span> <span class="keyword">new</span> <span class="keyword">values</span>;</span></span><br><span class="line"><span class="operator"><span class="keyword">create</span> <span class="keyword">materialized</span> <span class="keyword">view</span> <span class="keyword">log</span> <span class="keyword">on</span> coupon <span class="keyword">with</span> primary <span class="keyword">key</span>,<span class="keyword">sequence</span>,<span class="keyword">rowid</span>(couponactivityid,o2ostate) <span class="keyword">including</span> <span class="keyword">new</span> <span class="keyword">values</span>;</span></span><br><span class="line"><span class="comment">--创建物化视图，该物化视图指定了自创建之后开始每10分钟快速增量刷新一次，以保证物化视图的数据和原表统一</span></span><br><span class="line"><span class="operator"><span class="keyword">create</span> <span class="keyword">materialized</span> <span class="keyword">view</span> MVIEW_couponActivityCountData</span><br><span class="line"><span class="keyword">Build</span> <span class="keyword">immediate</span> <span class="keyword">refresh</span> <span class="keyword">fast</span> <span class="keyword">on</span> <span class="keyword">demand</span>  <span class="keyword">with</span> <span class="keyword">rowid</span> <span class="keyword">start</span> <span class="keyword">with</span> <span class="keyword">sysdate</span> <span class="keyword">next</span> <span class="keyword">sysdate</span> + <span class="number">10</span>/(<span class="number">24</span>*<span class="number">60</span>) <span class="keyword">as</span> </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">substr</span>(a.projectcode,</span><br><span class="line">              <span class="number">0</span>,</span><br><span class="line">              <span class="keyword">decode</span>(<span class="keyword">sign</span>(<span class="keyword">instr</span>(a.projectcode, <span class="string">','</span>, -<span class="number">1</span>, <span class="number">1</span>) - <span class="number">1</span>),</span><br><span class="line">                     -<span class="number">1</span>,</span><br><span class="line">                     <span class="keyword">length</span>(a.projectcode),</span><br><span class="line">                     <span class="number">1</span>,</span><br><span class="line">                     <span class="keyword">instr</span>(a.projectcode, <span class="string">','</span>, -<span class="number">1</span>, <span class="number">1</span>) - <span class="number">1</span>)) billno,</span><br><span class="line">       a.projectcode projectcode,</span><br><span class="line">       a.title activityname,</span><br><span class="line">       a.active_id activityId,</span><br><span class="line">       a.codeqty codeqty,</span><br><span class="line">       <span class="keyword">count</span>(<span class="keyword">p</span>.couponactivityid) receiveqty,</span><br><span class="line">       <span class="keyword">count</span>(<span class="keyword">case</span></span><br><span class="line">               <span class="keyword">when</span> <span class="keyword">p</span>.o2ostate = <span class="number">1</span> <span class="keyword">then</span></span><br><span class="line">                <span class="number">1</span></span><br><span class="line">               <span class="keyword">else</span></span><br><span class="line">                <span class="literal">null</span></span><br><span class="line">             <span class="keyword">end</span>) pushedqty，</span><br><span class="line">       <span class="keyword">count</span>(*)</span><br><span class="line">  <span class="keyword">from</span> coupon <span class="keyword">p</span>, couponactivity a</span><br><span class="line"> <span class="keyword">where</span> a.active_id = <span class="keyword">p</span>.couponactivityid</span><br><span class="line">   <span class="keyword">and</span> a.projectcode <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> a.projectcode, a.title, a.active_id, a.codeqty;</span></span><br></pre></td></tr></table></figure>
+<h3 id="创建物化视图注意点"><a href="#创建物化视图注意点" class="headerlink" title="创建物化视图注意点"></a>创建物化视图注意点</h3><p>1.创建适当的物化视图日志，是实现快速增量刷新的物化视图的前提<br>2.查询中需要添加 <strong>count(*)</strong>  才能实现定时自动刷新<br>下述是试验 sql 语句</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">-----------------------------------------------------------------------------------------------------</span><br><span class="line">--   发现一定要加一个count(*)才能自动刷新,定时刷新</span><br><span class="line">-----------------------------------------------------------------------------------------------------</span><br><span class="line">--create materialized view log <span class="keyword">on</span> coupon <span class="keyword">with</span> primary <span class="keyword">key</span>,sequence,rowid(couponactivityid,o2ostate) including <span class="keyword">new</span> values;</span><br><span class="line">--  <span class="keyword">with</span> rowid start sysdate <span class="keyword">next</span> sysdate + <span class="number">1</span>/(<span class="number">24</span>*<span class="number">60</span>)</span><br><span class="line">--  <span class="keyword">next</span> null</span><br><span class="line">/*create materialized view MVIEW_couponCountData</span><br><span class="line">Build immediate refresh fast <span class="keyword">on</span> demand  <span class="keyword">with</span> rowid start <span class="keyword">with</span> sysdate <span class="keyword">next</span> sysdate + <span class="number">1</span>/(<span class="number">24</span>*<span class="number">60</span>) <span class="keyword">as</span> </span><br><span class="line"><span class="keyword">select</span> p.couponactivityid activityId,</span><br><span class="line">       count(p.couponactivityid) receiveqty,</span><br><span class="line">       count(<span class="keyword">case</span></span><br><span class="line">               <span class="keyword">when</span> p.o2ostate = <span class="number">1</span> <span class="keyword">then</span></span><br><span class="line">                <span class="number">1</span></span><br><span class="line">               <span class="keyword">else</span></span><br><span class="line">                null</span><br><span class="line">             <span class="keyword">end</span>) pushedqty,</span><br><span class="line">       count(*) </span><br><span class="line">  <span class="keyword">from</span> coupon p</span><br><span class="line">  <span class="keyword">group</span> <span class="keyword">by</span> p.couponactivityid;</span><br><span class="line">*/</span><br><span class="line">--drop materialized view log <span class="keyword">on</span> coupon;</span><br><span class="line">--drop materialized view MVIEW_couponCountData;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> mlog$_coupon;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> coupon p <span class="keyword">where</span> p.couponactivityid=<span class="comment">'81391';</span></span><br><span class="line">/*update coupon p <span class="keyword">set</span> p.o2ostate=<span class="number">0</span> <span class="keyword">where</span> p.couponactivityid=<span class="comment">'81391';</span></span><br><span class="line">commit;*/</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="扩展关于-DBLink-跨库查询-相关"><a href="#扩展关于-DBLink-跨库查询-相关" class="headerlink" title="扩展关于 DBLink 跨库查询 相关"></a>扩展关于 DBLink 跨库查询 相关</h2><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby">-查看 dblink信息</span><br><span class="line"></span>-<span class="ruby">-select * from <span class="constant">ALL_DB_LINKS</span>;</span><br><span class="line"></span></span><br><span class="line">-<span class="ruby">-选择一个<span class="constant">DBLink</span>后，要关联这个<span class="constant">DBLink</span>下所有的表名</span><br><span class="line"></span>-<span class="ruby">-select table_name from user_tables<span class="variable">@crmquery</span>;</span></span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>主要耗时 是：在 创建了 物化视图日志之后,创建 物化视图时 报 各种问题;查找很多资料解决相关问题,原因就是 创建的 物化视图 不正确,对于这种复杂查询的 sql 查询创建的 物化视图,需要创建 primary key sequence rowid 的物化视图日志,<br>其中 rowid 中的列 由 group by 语句 后面 的 相关字段 有关;另外就是 对于查询结构的要求,对字符串的截取 substr 和 case 语句的 写法（类似 程序的 if else 功能）使用和学习</p>
+<hr>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://blog.csdn.net/orion61/article/details/6873593" target="_blank" rel="external">oracle物化视图详解</a></p>
+<p><a href="http://www.cnblogs.com/linjiqin/archive/2012/05/22/2513551.html" target="_blank" rel="external">Oracle如何根据物化视图日志快速刷新物化视图</a></p>
+<p><a href="http://blog.itpub.net/20482996/viewspace-1251469/" target="_blank" rel="external">浅析为何Oracle物化视图对distinct, group by不支持快速刷新</a></p>
+<p><a href="http://www.cnblogs.com/linjiqin/archive/2012/05/23/2514795.html" target="_blank" rel="external">oracle物化视图日志结构</a></p>
+<p><a href="http://www.cnblogs.com/zyizyizyi/archive/2012/04/25/2497824.html" target="_blank" rel="external">Oracle物化视图</a></p>
+<p><a href="http://www.cnblogs.com/sopost/archive/2009/12/23/2190138.html" target="_blank" rel="external">物化视图的快速刷新</a></p>
+<p><a href="http://www.cnblogs.com/juddhu/archive/2012/03/07/2383101.html" target="_blank" rel="external">oracle中的decode的使用</a></p>
+<p><a href="http://www.cnblogs.com/eshizhan/archive/2012/04/06/2435493.html" target="_blank" rel="external">Oracle CASE WHEN 用法介绍</a></p>
+<p><a href="http://www.cnblogs.com/ningvsban/p/3586218.html" target="_blank" rel="external">Oracle中INSTR、SUBSTR和NVL的用法</a></p>
+<p><a href="http://blog.csdn.net/hzgang811856054/article/details/7399809" target="_blank" rel="external">oracle获取字符串长度函数length()和hengthb()</a></p>
+<p><a href="http://www.2cto.com/database/201409/339237.html" target="_blank" rel="external">使用OracleDBLink进行数据库之间对象的访问操作</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Oracle/" rel="tag">#Oracle</a>
+          
+            <a href="/tags/物化视图/" rel="tag">#物化视图</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/java/Java集合类操作经验总结/" rel="next" title="Java集合类操作经验总结">
+                <i class="fa fa-chevron-left"></i> Java集合类操作经验总结
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/开发工具/SublimeText 使用经验/" rel="prev" title="SublimeText 使用经验">
+                SublimeText 使用经验 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="Oracle/Oracle物化视图/"
+           data-title="Oracle物化视图" data-url="http://aresLove.github.io/Oracle/Oracle物化视图/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="ares" />
+          <p class="site-author-name" itemprop="name">ares</p>
+          <p class="site-description motion-element" itemprop="description">永恒的心，经年的梦，前行的路，执念一生.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/areslove" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题背景"><span class="nav-number">1.</span> <span class="nav-text">问题背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理方法"><span class="nav-number">2.</span> <span class="nav-text">处理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建物化视图日志"><span class="nav-number">2.1.</span> <span class="nav-text">创建物化视图日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建物化视图"><span class="nav-number">2.2.</span> <span class="nav-text">创建物化视图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最终实现的如下物化视图"><span class="nav-number">2.2.1.</span> <span class="nav-text">最终实现的如下物化视图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建物化视图注意点"><span class="nav-number">2.3.</span> <span class="nav-text">创建物化视图注意点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展关于-DBLink-跨库查询-相关"><span class="nav-number">3.</span> <span class="nav-text">扩展关于 DBLink 跨库查询 相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ares</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"aresLove"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

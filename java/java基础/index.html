@@ -1,0 +1,809 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="java，java基础," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="放逐，天涯路" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="java，java基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java 基础">
+<meta property="og:url" content="http://aresLove.github.io/java/java基础/index.html">
+<meta property="og:site_name" content="放逐，天涯路">
+<meta property="og:description" content="java，java基础">
+<meta property="og:updated_time" content="2017-02-19T09:34:19.574Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java 基础">
+<meta name="twitter:description" content="java，java基础">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://aresLove.github.io/java/java基础/"/>
+
+  <title> java 基础 | 放逐，天涯路 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">放逐，天涯路</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">永恒的心，经年的梦，前行的路，执念一生</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                java 基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-19T17:34:19+08:00" content="2017-02-19">
+              2017-02-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/java/java基础/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="java/java基础/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="java基础学习笔记"><a href="#java基础学习笔记" class="headerlink" title="java基础学习笔记"></a>java基础学习笔记</h1><h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>1.java的可移植性原理：依赖不同平台的jvm，所有的源代码(<em>.java)经过 javac 编译成字节码文件(</em>.class)就可以在不同平台的 JVM 上解释执行。<br>2.public class  和  class  的区别：一个java文件只能有一个 public 声明的 class ，并且该类名和文件名称相同，可以同时存在多个 class 类，经过编译生成多个 <em>.class 文件，执行的时候一定要执行已经生成的 </em>.class 文件。<br>3.java 数据类型的划分：8 个基本数据类型{boolean,char,byte,short,int,long,float,double}、3 个引用数据类型{class,interface,array}<br>4.方法：一段可以重复调用的代码段。方法的重载：根据方法的签名来判断方法重载。方法签名：参数个数和参数类型、参数顺序。<br>5.数组：数组是引用数据类型，所以一定要划分出内存：栈和堆两块内存。数组的声明定义、初始化和简单操作，jdk 提供的相关操作方法：java.util.Array.sort(数组名称)、System.arraycopy(Object src, int srcPos, Object dest, int destPos, int length)数组拷贝。<br>6.length、length()、size()：length是数组的一个属性，length()是字符串的一个方法，size()是泛型集合的一个方法。<br>7.JDK、JRE、JVM三者间的关系：<a href="http://playkid.blog.163.com/blog/static/56287260201372113842153/" target="_blank" rel="external">金字塔结构  JDK=JRE+JVM+Java程序</a></p>
+<h2 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h2><p>1.类和对象的概念：类是共性的抽象描述，对象是类的具体表现。<br>2.面向对象的三大特性：封装、继承、多态。<br>3.构造方法：构造方法的主要作用就是为对象的属性初始化，默认会为类创建一个无参构造方法，一旦手动创建非无参构造方法，则不会再创建默认的无参构造方法，这时需要手动创建无参构造方法。<br>4.匿名对象：没有对应的栈内存空间，仅使用一次就等待被垃圾回收。<br>5.String类：<br>  1).变量的初始化的两种方式{直接赋值、调用构造方法 new String(“字符串”)}.</p>
+<pre><code>直接赋值会开辟一个栈内存空间，如果在字符串常量池中不存在该字符串引用地址，
+则将会开辟一个堆内存空间创建该字符串对象并返回该字符串引用地址存放到字符串常量池（在本地方法栈中）中并使得引用变量指向他，而且以后若有相同的内容将不再创建
+字符串对象及字符串常量池引用而是直接将引用变量指向常量池中的该字符串的引用，但使用构造方法，则会开辟三个或两个内存空间，一个栈内存空间和两个或一个堆内存空间，使用构造
+方法的形式创建的对象将直接放置到堆中，每调用一次就会创建一个新的对象，而构造方法的参数也是一个string对象，该字符串也是需要在堆内存中创建存储的，若已存在则可不需要创建。
+&lt;strong style=&quot;color:red;&quot;&gt;因此，直接赋值方式可能会只创建一个栈内存空间（所创建的字符串对象的引用在常量池中已经存在），也可能创建三个内存空间（一个栈内存空间、一个字符串常量池栈空间（方法栈空间）
+和一个堆内存空间），但构造方法的方式肯定是创建两个或三个内存空间（一个栈内存空间和一个或两个堆内存空间）。&lt;/strong&gt;
+
+String s = new String(&quot;abc&quot;); 创建了几个对象的问题：
+当 “abc” 在 字符串常量池中已经存在的时候，创建了 一个 对象， 是在构造方法返回的时候创建的；
+当 “abc” 在 字符串常量池中不存在的时候， 创建了 两个 对象， 一个是在构造方法返回的时候创建的，另一个是 创建 字符串 &quot;abc&quot; 的，因为 new String() 这个构造方法的参数 也是一个字符串。
+
+String s = &quot;abc&quot;; 和 String s = &quot;ab&quot; + &quot;cd&quot;; 
+都只创建了一个对象，因为这种方式在编译期 s 的值 就已经确定了，常量的值 在 编译期 就已经确定了， 而 只有使用引号包含的文本方式创建的String对象之间使用 “+” 连接产生的新对象才会被加入字符串常量池中。
+对于 String s = &quot;abc&quot;; 就是创建的 “abc” 这一个 对象，
+对于 String s = &quot;ab&quot; + &quot;cd&quot;; 其实质 就相当于 String s = &quot;abcd&quot;; 同理，String s = &quot;a&quot; + “b” + &quot;c&quot; + &quot;d&quot;; 也只创建了一个对象。
+</code></pre><p>  参考资料：<br>  <a href="http://ask.csdn.net/questions/197451" target="_blank" rel="external">java中String类两种初始化的区别</a>、<a href="http://blog.csdn.net/Henry_YQH/article/details/8619098" target="_blank" rel="external">Java中两种字符串初始化方法的区别</a>、<br>  <a href="http://www.cnblogs.com/Cratical/archive/2012/08/21/2649985.html" target="_blank" rel="external">Java虚拟机 运行时数据区</a>、<a href="http://www.cnblogs.com/iyangyuan/p/4631696.html" target="_blank" rel="external">触摸java常量池</a></p>
+<p>  2).Java中的String为什么是不可变的.  </p>
+<pre><code>在Java中String类其实就是对字符数组的封装,而String类的变量都是 private final ，外部不能修改，这样就是，String变量一旦初始化就不能修改；而String类提供了一些修改替换等方法其实质是返回了新的String对象并赋值。
+但是可以通过反射的机制来改变String对象的值，因为String类的 value 属性 是char 类型数组的引用，可以通过反射获取 String的 value 字段并改变他的访问权限，然后获取value的值在进行改变，这样是可以达到目标的。
+</code></pre><p>  参考资料：<br>  <a href="http://blog.csdn.net/zhangjg_blog/article/details/18319521" target="_blank" rel="external">Java中的String为什么是不可变的？ – String源码分析</a>、<a href="http://www.importnew.com/16817.html" target="_blank" rel="external">Java中的String为什么是不可变的？ — String源码分析</a></p>
+<p>  3).== 和 equals() 的区别：</p>
+<pre><code>== 是值比较， equals 是引用比较。 == 对于基本数据类型来说就是比较他们的值，而对于引用数据类型来说是比较他们存放的引用地址；equals是用于引用类型的值比较。
+值得注意的是：
+&lt;strong style=&quot;color:red;&quot;&gt;在Java中，Object对象的equals方法默认使用了= =操作符，所以如果你自创的类没有覆盖equals方法，那你的类使用equals和使用==会得到同样的结果。&lt;/strong&gt;
+</code></pre><p>  参考资料：<br>  <a href="http://www.cnblogs.com/zhxhdean/archive/2011/03/25/1995431.html" target="_blank" rel="external">Java中equals和==的区别</a>、<a href="http://www.importnew.com/6804.html" target="_blank" rel="external">equals与”==”的区别</a></p>
+<p>  4).string类的相关方法使用：</p>
+<pre><code>|- 与字符相关：toCharArray()、charAt(int ind)、new String(char c[])、new String(char c[],int offset,int length) 
+|- 与字节相关：getBytes()、new String(byte b[])、new String(byte b[],int offset,int length)
+|- 拆份：public String[] split(String regex)
+|- 替换：public String replaceAll(String org,String newc)、public String replaceFirst(String org,String newc) 
+|- 截取：public String substring(int offset,int length) 、public String substring(int offset)
+|- 其他操作：length()、toUpperCase()、toLowerCase()、trim()、equalsIgnoreCase()、 
+</code></pre><p>6.java中关于 值传递 和 引用传递的争论：“《Core Java》的作者，以及JAVA的创造者James Gosling都认为当一个对象或引用类型变量被当作参数传递时，也是值传递”<br>参见：<a href="http://www.cnblogs.com/xiaoQLu/archive/2013/04/10/3011561.html" target="_blank" rel="external">Java值传递和引用传递之我见</a>、<a href="https://www.zhihu.com/question/31203609" target="_blank" rel="external">java到底是值传递还是引用传递？</a><br><a href="https://www.zhihu.com/question/20628016" target="_blank" rel="external">为什么 Java 只有值传递，但 C# 既有值传递，又有引用传递，这种语言设计有哪些好处？</a><br>7.static、this关键字:</p>
+<p>   static关键字:</p>
+<pre><code>static所修饰的方法、字段、初始化块等是属于类本身的而不是对象实例，“static的真正作用是用于就是用于区分Field、方法、内部类、初始化块这四种成员到底属于类本身还是属于实例。”
+</code></pre><p>   this关键字：</p>
+<pre><code>1）Java提供了一个this关键字，this关键字总是指向调用该方法的对象。
+根据this出现位置的不同，有两种情形：
+（1）在构造器中引用该构造器正在初始化的对象；
+（2）在方法中引用调用该方法的对象。
+2）this关键字最大的作用就是让类中一个方法，访问该类里的另一方法或Field。
+3）this可以代表任何对象，当this出现在某个方法体中时，它所代表的对象是不确定的，但是它的类型是确定的，它所代表的对象只能是当前类；只有当这个方法被调用时，它所代表的对象才被确定下来：谁调用这个方法，this就代表谁。
+4）static修饰的方法可以直接使用类来调用方法。如果在static修饰的方法中使用this关键字，则这个关键字就无法指向合适的对象。所以，static修饰的方法中不能使用this引用。
+</code></pre><p>参见：<a href="http://www.cnblogs.com/EvanLiu/archive/2013/06/05/3118420.html" target="_blank" rel="external">Java笔记：static、this关键字</a></p>
+<ol>
+<li><p>类的初始化过程（执行顺序）：</p>
+<p>在不涉及继承关系的时候的执行顺序：</p>
+<p> （静态变量、惊天初始化块）&gt;（变量、初始化块）&gt;构造器</p>
+<p>在设计有继承关系时候的执行顺序：</p>
+<p> （父类静态变量、静态初始化块）&gt;（子类静态变量、静态初始化块）&gt;（父类变量、初始化块）&gt; 父类构造器 &gt;（子类变量、子类初始化块）&gt; 子类构造器<br> <strong>并不是父类完全初始化结束才进行子类初始化，而是子类的静态变量和静态初始化块在父类变量和初始化块之前初始化。而（静态）变量和（静态）初始化块之间的顺序是由他们在类声明时出现的先后顺序决定</strong></p>
+</li>
+</ol>
+<p>9.内部类：是指在一个外部类的内部再定义一个类。内部类作为外部类的一个成员，并且依附于外部类而存在的。</p>
+<pre><code>Java中非静态内部类对象的创建要依赖其外部类对象
+
+即：
+   new Outer().new Inner();
+</code></pre><p>使用内部类的原因：使用内部类最吸引人的原因是：每个内部类都能独立地继承一个（接口的）实现，所以无论外围类是否已经继承了某个（接口的）实现，对于内部类都没有影响。接口只是解决了部分问题，而内部类使得多重继承的解决方案变得更加完整。</p>
+<p>下述摘自<a href="http://www.cnblogs.com/chenssy/p/3388487.html" target="_blank" rel="external">java提高篇(八)—-详解内部类</a></p>
+<pre><code>其实使用内部类最大的优点就在于它能够非常好的解决多重继承的问题，但是如果我们不需要解决多重继承问题，那么我们自然可以使用其他的编码方式，但是使用内部类还能够为我们带来如下特性（摘自《Think in java》）：
+
+      1、内部类可以用多个实例，每个实例都有自己的状态信息，并且与其他外围对象的信息相互独立。
+
+      2、在单个外围类中，可以让多个内部类以不同的方式实现同一个接口，或者继承同一个类。
+
+      3、创建内部类对象的时刻并不依赖于外围类对象的创建。
+
+      4、内部类并没有令人迷惑的“is-a”关系，他就是一个独立的实体。
+
+      5、内部类提供了更好的封装，除了该外围类，其他类都不能访问。
+
+当我们在创建一个内部类的时候，它无形中就与外围类有了一种联系，依赖于这种联系，它可以无限制地访问外围类的元素。
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"OuterClass..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span></span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> OuterClass <span class="title">getOuterClass</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> OuterClass.<span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        OuterClass outerClass = <span class="keyword">new</span> OuterClass();</span><br><span class="line">        OuterClass.InnerClass innerClass = outerClass.new InnerClass();</span><br><span class="line">        innerClass.getOuterClass().display();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">-------------</span><br><span class="line">Output:</span><br><span class="line">OuterClass...</span><br></pre></td></tr></table></figure>
+<pre><code>内部类是个编译时的概念，一旦编译成功后，它就与外围类属于两个完全不同的类（当然他们之间还是有联系的）。对于一个名为OuterClass的外围类和一个名为InnerClass的内部类，在编译成功后，会出现这样两个class文件：OuterClass.class和OuterClass$InnerClass.class。
+</code></pre><p>在Java中内部类主要分为成员内部类、局部内部类、匿名内部类、静态内部类.<a href="http://www.cnblogs.com/chenssy/p/3388487.html" target="_blank" rel="external">具体了解参考</a><br>10.类的继承：方便地实现了功能的扩充，在java中只允许单继承；子类能直接继承父类所有的非私有操作，而只能隐式地继承所有的私有操作。<br>11.重载 和 覆写 的区别：</p>
+<pre><code>重载：根据方法签名来判断方法重载
+    是同一个类中，相同的方法名称，不同的参数列表，以实现不同的功能。
+覆写：在继承关系中体现
+    是子类和父类之间，相同的方法名称并且方法的参数列表一样，在不同类中实现不同的方法。但子类中的访问权限不能比父类中的严格。
+</code></pre><p>12.final 关键字：修饰的类怒能再被继承，修饰的方法不能被子类覆写，修饰的变量表示常量。<br>13.抽象类： 包含一个抽象方法的类，抽象类必须使用abstract关键字声明，所有的抽象类不能直接实例化，只能被子类继承并覆写所有的抽象方法。<br>14.接口： 抽象方法和全局常量的集合，使用 interface 关键字进行声明，通过 implements 关键字被子类实现，一个子类可以实现多个接口，一个接口也可以继承多个接口。<br>15.包装类、自动装箱、自动拆箱：包装类是对基本数据类型的处理封装并包含了许多与基本数据先关的操作的封装；装箱：基本数据类型转换为包装类就是装箱，反之就是拆箱。</p>
+<h2 id="面向对象高级"><a href="#面向对象高级" class="headerlink" title="面向对象高级"></a>面向对象高级</h2><p>1.抽象类 和 接口 的区别：</p>
+<pre><code>共同点：
+      都不能实例化，都是抽象类型(抽象层次不同，抽象类是对类抽象，接口是对行为抽象；
+      抽象类是对有相似特点的类的一种继承关系的体现，而接口的子类之间可以毫无关系
+      从设计层次来看，抽象类是自底向上抽象，而接口是自顶向下设计的)，
+      都是实现多态的一种机制，子类都需要实现定义的所有的抽象方法，
+
+不同点：
+
+      抽象类：
+            1.能有默认的方法实现
+            2.可以存在构造器
+            3.可以由 public、protected、default来修饰
+            4.可以存在main方法，并且可以运行
+            5.可以继承一个类或实现多个接口
+            6.新增方法可能不需要更改实现类
+
+      接口：
+            1.不能有任何方法实现
+            2.不能有构造器
+            3.只能由默认的public来修饰，不能用其他来修饰
+            4.不能存在main方法
+            5.只能继承一个或多个其他接口
+            6.新增方法一定要更改实现类
+
+     综述：最重要的三方面：方法有默认实现，多继承实现，新增方法对实现类的影响
+</code></pre><p>  参考资料：<a href="http://blog.csdn.net/chenssy/article/details/12858267" target="_blank" rel="external">java提高篇（四）—–抽象类与接口</a>、<a href="http://www.importnew.com/12399.html" target="_blank" rel="external">Java抽象类与接口的区别</a></p>
+<p>2.java 的多态性： 重载、覆写、向上转型</p>
+<pre><code>在面向对象中，多态分为静态多态和动态多态，静态多态是指编译期就已经确定了调用目标，主要是指重载；而动态多态是指在程序运行期才能确定调用目标，是通过动态绑定来实现的，主要是指覆写（通过继承和接口方式）。
+</code></pre><p>参考资料：<a href="http://www.cnblogs.com/chenssy/p/3372798.html" target="_blank" rel="external">java提高篇(四)—–理解java的三大特性之多态</a>、<a href="http://blog.csdn.net/hikvision_java_gyh/article/details/8957456" target="_blank" rel="external">Java多态性详解——父类引用子类对象</a>、<br><a href="http://blog.csdn.net/thinkGhoster/article/details/2307001" target="_blank" rel="external">深入理解java多态性</a></p>
+<p>3.单例设计模式：</p>
+<p>懒汉式，线程不安全</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>懒汉式，线程安全</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>双重检验锁</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getSingleton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;                         <span class="comment">//Single Checked</span></span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton.class) &#123;</span><br><span class="line">                <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;                 <span class="comment">//Double Checked</span></span><br><span class="line">                    instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考资料：<a href="http://wuchong.me/blog/2014/08/28/how-to-correctly-write-singleton-pattern/" target="_blank" rel="external">如何正确地写出单例模式</a>、<a href="http://www.devwiki.net/2016/02/27/Java-Design-Pattern-Singleton/" target="_blank" rel="external">Java设计模式—单例模式</a>、<br><a href="https://segmentfault.com/a/1190000002528104" target="_blank" rel="external">设计模式-单例模式</a></p>
+<p>4.匿名内部类：是没有名字的内部类，正因为没有名字，所以匿名内部类只能使用一次，它通常用来简化代码编写。<br>使用匿名内部类我们必须要继承一个父类或者实现一个接口，当然也仅能只继承一个父类或者实现一个接口。同时它也是没有class关键字，这是因为匿名内部类是直接使用new来生成一个对象的引用。当然这个引用是隐式的。<br>由于匿名内部类不能是抽象类，所以它必须要实现它的抽象父类或者接口里面所有的抽象方法。</p>
+<pre><code>注意事项
+
+  在使用匿名内部类的过程中，我们需要注意如下几点：
+
+   1、使用匿名内部类时，我们必须是继承一个类或者实现一个接口，但是两者不可兼得，同时也只能继承一个类或者实现一个接口。
+
+   2、匿名内部类中是不能定义构造函数的。
+
+   3、匿名内部类中不能存在任何的静态成员变量和静态方法。
+
+  4、匿名内部类为局部内部类，所以局部内部类的所有限制同样对匿名内部类生效。
+
+  5、匿名内部类不能是抽象的，它必须要实现继承的类或者实现的接口的所有抽象方法。
+
+  6、 我们给匿名内部类传递参数的时候，若该形参在内部类中需要被使用，那么该形参必须要为final。也就是说：当所在的方法的形参需要被内部类里面使用时，该形参必须为final。
+</code></pre><p>参考资料：<a href="http://www.cnblogs.com/chenssy/p/3390871.html" target="_blank" rel="external">java提高篇(十)—–详解匿名内部类</a></p>
+<p>5.泛型：</p>
+<p>泛型的好处是在编译的时候检查类型安全，并且所有的强制转换都是自动和隐式的，以提高代码的重用率。</p>
+<p>  参考资料：<a href="http://www.ibm.com/developerworks/cn/java/j-jtp01255.html" target="_blank" rel="external">Java 理论和实践: 了解泛型</a>、<a href="http://www.imooc.com/article/1935" target="_blank" rel="external">Java总结篇系列：Java泛型</a>、<br>  <a href="http://my.oschina.net/jiemachina/blog/201507" target="_blank" rel="external">java 泛型中 T 和 问号（通配符）的区别</a>、<a href="http://findingsea.github.io/2015/10/09/java-generic-type-erasure/" target="_blank" rel="external">Java泛型：类型擦除</a>、<br>  <a href="http://liuzxc.github.io/blog/java-advance-06/" target="_blank" rel="external">Java 提高篇(六) — 泛型</a></p>
+<p>6.里氏代换原则：<br>里氏代换原则（LiskovSubstitution Principle，简称LSP）说的是：一个软件实体如果使用的是一个基类的话，那么一定适用于其子类，而且它根本不能够察觉出基类对象<br>通俗点：里氏代换原则(Liskov Substitution Principle, LSP)：所有引用基类（父类）的地方必须能透明地使用其子类的对象。</p>
+<p><strong style="color:red;">里氏代换原则是实现开闭原则的重要方式之一，由于使用基类对象的地方都可以使用子类对象，因此在程序中尽量使用基类类型来对对象进行定义，而在运行时再确定其子类类型，用子类对象来替换父类对象。</strong></p>
+<p>参考资料：<a href="http://www.blogjava.net/fancydeepin/archive/2012/08/02/java_pattern_LSP.html" target="_blank" rel="external">里氏代换原则（LSP）</a>、<a href="http://blog.csdn.net/lovelion/article/details/7540445" target="_blank" rel="external">面向对象设计原则之里氏代换原则</a>、<br><a href="http://zim.logdown.com/posts/261930-about-liskov-substitution-principle" target="_blank" rel="external">equals 与里氏代换原则</a>、<a href="http://blog.csdn.net/zhengzhb/article/details/7281833" target="_blank" rel="external">设计模式六大原则（2）：里氏替换原则</a></p>
+<h2 id="关于面试，相关资料推荐"><a href="#关于面试，相关资料推荐" class="headerlink" title="关于面试，相关资料推荐"></a>关于面试，相关资料推荐</h2><p><a href="http://blog.csdn.net/jackfrued/article/details/44921941" target="_blank" rel="external">Java面试题全集（上）</a><br><a href="http://blog.csdn.net/jackfrued/article/details/44931137" target="_blank" rel="external">Java面试题全集（中）</a><br><a href="http://blog.csdn.net/jackfrued/article/details/44931161" target="_blank" rel="external">Java面试题全集（下）</a></p>
+<p><a href="http://www.importnew.com/10980.html" target="_blank" rel="external">115个Java面试题和答案——终极列表（上）</a><br><a href="http://www.importnew.com/11028.html" target="_blank" rel="external">115个Java面试题和答案——终极列表（下）</a></p>
+<p><a href="http://www.importnew.com/17232.html" target="_blank" rel="external">最近5年133个Java面试问题列表</a><br><a href="http://www.importnew.com/15980.html" target="_blank" rel="external">40个Java集合面试问题和答案</a></p>
+<p><a href="http://www.hollischuang.com/archives/10#计算机基础知识" target="_blank" rel="external">Java面试题整理</a><br><a href="http://www.imooc.com/article/1330" target="_blank" rel="external">20个高级Java面试题汇总</a></p>
+<hr>
+<h2 id="相关参考资料"><a href="#相关参考资料" class="headerlink" title="相关参考资料"></a>相关参考资料</h2><p><a href="https://www.zybuluo.com/king/note/29599" target="_blank" rel="external">Java学习笔记</a></p>
+<p><a href="http://qd2.cache.baidupcs.com/file/79243cc0a9548154355db3ed7f3c83b6?bkt=p-6ee93bc7b3a9337328142b41dc618989&amp;xcode=48178b544e5545ab60e7fc9ba9e23a128741cec7ecb7b3241682cb8519c2059f&amp;fid=4179565000-250528-4267523062&amp;time=1456579892&amp;sign=FDTAXGERLBH-DCb740ccc5511e5e8fedcff06b081203-oh%2FHcN9g%2B%2Fva0xQWXSoPu1bK%2Byk%3D&amp;to=qc2&amp;fm=Nan,B,U,ny&amp;sta_dx=5&amp;sta_cs=0&amp;sta_ft=rar&amp;sta_ct=7&amp;fm2=Nanjing,B,U,ny&amp;newver=1&amp;newfm=1&amp;secfm=1&amp;flow_ver=3&amp;pkey=14000bd5be2f9c1584e7fb677bb26825f84fb7ccff250000004c19bd&amp;sl=73793614&amp;expires=8h&amp;rt=sh&amp;r=858982758&amp;mlogid=1342792428858653681&amp;vuk=1046126508&amp;vbdid=2667063597&amp;fin=%E6%9D%8E%E5%85%B4%E5%8D%8Ejavase%E5%85%A8%E9%83%A8%E7%AC%94%E8%AE%B0.rar&amp;fn=%E6%9D%8E%E5%85%B4%E5%8D%8Ejavase%E5%85%A8%E9%83%A8%E7%AC%94%E8%AE%B0.rar&amp;slt=pm&amp;uta=0&amp;rtype=1&amp;iv=0&amp;isw=0&amp;dp-logid=1342792428858653681&amp;dp-callid=0.1.1" target="_blank" rel="external">李兴华javase全部笔记.rar(下载链接地址)</a></p>
+<p><a href="http://blog.csdn.net/chenssy/article/category/1688799/2" target="_blank" rel="external">java提高篇</a></p>
+<p><a href="http://www.devstore.cn/essay/essayInfo/3434.html" target="_blank" rel="external">衡量java初学者是否入门的6个问题</a></p>
+<p><a href="http://zangweiren.blog.51cto.com/all/412366" target="_blank" rel="external">JAVA面试题解惑系列 （12）</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java，java基础/" rel="tag">#java，java基础</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/java/hibernate映射问题/" rel="next" title="hibernate 映射相关问题">
+                <i class="fa fa-chevron-left"></i> hibernate 映射相关问题
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/java/分布式框架-Dubbox学习/" rel="prev" title="分布式框架 Dubbox 学习">
+                分布式框架 Dubbox 学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="java/java基础/"
+           data-title="java 基础" data-url="http://aresLove.github.io/java/java基础/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="ares" />
+          <p class="site-author-name" itemprop="name">ares</p>
+          <p class="site-description motion-element" itemprop="description">永恒的心，经年的梦，前行的路，执念一生.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/areslove" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java基础学习笔记"><span class="nav-number">1.</span> <span class="nav-text">java基础学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number">1.1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象基础"><span class="nav-number">1.2.</span> <span class="nav-text">面向对象基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象高级"><span class="nav-number">1.3.</span> <span class="nav-text">面向对象高级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于面试，相关资料推荐"><span class="nav-number">1.4.</span> <span class="nav-text">关于面试，相关资料推荐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关参考资料"><span class="nav-number">1.5.</span> <span class="nav-text">相关参考资料</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ares</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"aresLove"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

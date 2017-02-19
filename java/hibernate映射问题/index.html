@@ -1,0 +1,685 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hibernate,hibernate映射,java," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="放逐，天涯路" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="hibernate 映射问题及处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hibernate 映射相关问题">
+<meta property="og:url" content="http://aresLove.github.io/java/hibernate映射问题/index.html">
+<meta property="og:site_name" content="放逐，天涯路">
+<meta property="og:description" content="hibernate 映射问题及处理">
+<meta property="og:updated_time" content="2017-02-19T09:34:19.573Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hibernate 映射相关问题">
+<meta name="twitter:description" content="hibernate 映射问题及处理">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://aresLove.github.io/java/hibernate映射问题/"/>
+
+  <title> hibernate 映射相关问题 | 放逐，天涯路 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">放逐，天涯路</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">永恒的心，经年的梦，前行的路，执念一生</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                hibernate 映射相关问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-19T17:34:19+08:00" content="2017-02-19">
+              2017-02-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/java/hibernate映射问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="java/hibernate映射问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="需求背景"><a href="#需求背景" class="headerlink" title="需求背景"></a>需求背景</h2><p>项目需求，将中间数据库的数据查询到本地视图，再将本地视图（千万级数据量）和会员表（百万级数据量）关联查询导出相关数据，<br>因为数据量比较大，一次全部查出或导致内存溢出，因此，后台需要对这些关联数据分页查询然后分批导出cvs文件，然后上传到媒体服务器。</p>
+<hr>
+<h2 id="需求实现过程中处理的问题"><a href="#需求实现过程中处理的问题" class="headerlink" title="需求实现过程中处理的问题"></a>需求实现过程中处理的问题</h2><p>1.视图处理须知：将视图注解（配置）实体关系映射，并将添加的实体加入 <em>persistence.xml</em> 中；因为 查询实现的方式是 EJB JPA 实体管理器 创建的query，PersistenceContext（持久化上下文）上下文的配置文件中的 <em>持久化单元</em> 中配置的相关实体,否则会 出现 为 sql 语句中的变量赋值时，无法将传入的参数设置到sql语句中<br>    <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java<span class="class">.lang</span><span class="class">.IndexOutOfBoundsException</span>: Remember that ordinal parameters are <span class="number">1</span>-based!</span><br></pre></td></tr></table></figure></p>
+<p>这个问题产生的原因是 hibernate 通过 持久化上下文 中查找不到 相关实体，无法映射表结构，不能将参数设置到sql语句中，提示出这种很疑惑的问题，反复调试，能看到传入的变量值和创建出来的sql语句和sql变参，可就是无法将变量值设置给sql变参，后台日志输出上面的提示，很费解。</p>
+<p>2.创建视图实体和联合主键：使用注解方式实现，参照 <a href="http://www.iteye.com/problems/87622" target="_blank" rel="external">Hibernate怎样使用Annotation映射视图</a> 和 <a href="http://blog.csdn.net/flyemu/article/details/8302615" target="_blank" rel="external">Annotation对Hibernate中联合主键定义</a> 将视图所有的字段放在联合主键实体中,该实体用<br>    <figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Embeddable</span></span><br></pre></td></tr></table></figure></p>
+<p>注解，字段和普通实体一样使用<br>    <figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Column</span></span><br></pre></td></tr></table></figure></p>
+<p>注解,在视图实体中使用该联合主键实体,用<br>    <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@EmbeddedId</span> <span class="variable">@AttributeOverrides</span>(&#123;...&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>注解，这样视图映射关系已经搞定，因为开启了org.hibernate.tool.hbm2ddl.SchemaUpdate - Running hbm2ddl schema update，在启动过程中会报<br>    <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ERROR com<span class="class">.huanyu</span><span class="class">.common</span><span class="class">.jpa</span><span class="class">.index</span><span class="class">.OracleDbIndexBuilder</span> - 创建“View_memcon”表主键(...)出错。</span><br><span class="line">java<span class="class">.sql</span><span class="class">.SQLException</span>: ORA-<span class="number">00942</span>: 表或视图不存在</span><br></pre></td></tr></table></figure></p>
+<p>处理这个报错的方法是，关闭 hibernate hbm2ddl = none 即可，不需要更新索引，这个报错并不影响功能，只是在容器启动时报这么个错误看着不舒服,因为 本来 视图 就没有 主键 和 索引，这样去为视图 创建实体映射关系并添加联合主键，只是为了能使用 hibernate 去查询视图<br>3.关联查询语句： sql 语句   表、字段 is not mapped 问题<br>4.分批量导出多个文件： 因为写入单个文件的耗时线性增长，600万数据写入一个文件中，10多个小时没导完</p>
+<h3 id="视图处理"><a href="#视图处理" class="headerlink" title="视图处理"></a>视图处理</h3><p>将视图映射成实体表，过程中 直接使用 em.createQuery(“数据库查询语句”)  报错：表 is not mapped 的问题，因此，引出了需要为视图创建实体和联合主键<br>创建视图实体和联合主键参照 <a href="http://www.iteye.com/problems/87622" target="_blank" rel="external">Hibernate怎样使用Annotation映射视图</a> ，启动报关于视图 不存在的问题是因为开启了<br>更新表结构的配置，因此为视图更新表结构的时候创建联合主键时为视图更新索引报错，将 hibernate 的 hbm2ddl 配置关闭即可。</p>
+<p>过程中，调试关于 <em>java.lang.IndexOutOfBoundsException: Remember that ordinal parameters are 1-based!</em>  的问题，反复调试总不知如何解决，后来得到指点<br>在  <em>将添加的视图实体加入 persistence.xml 中</em> 之后，这个问题得到解决</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">2016-01-13 10:32:26,742 [common-quartz-core.scheduler_Worker-2] ERROR com.huanyu.mbr.core.consumption.dao.ConsumptionDao - search(definition=WHERE</span><br><span class="line">  code.EQUALS(1507070011)</span><br><span class="line">ORDER BY </span><br><span class="line">PAGE SIZE = 5000</span><br><span class="line">PAGE = 0) error</span><br><span class="line">SQL=<span class="operator"><span class="keyword">SELECT</span> v.*,<span class="keyword">m</span>.<span class="keyword">name</span>,<span class="keyword">m</span>.sex,<span class="keyword">m</span>.idNo,<span class="keyword">m</span>.cell,<span class="keyword">m</span>.cityName</span><br><span class="line"><span class="keyword">FROM</span> com.huanyu.mbr.core.consumption.dao.Consumption <span class="keyword">AS</span> consumption , com.huanyu.mbr.core.consumption.dao.view_memcon <span class="keyword">AS</span> v , com.huanyu.mbr.dao.mbr.Mbr <span class="keyword">AS</span> <span class="keyword">m</span></span><br><span class="line"><span class="keyword">WHERE</span> (consumption.code <span class="keyword">in</span> ?) <span class="keyword">AND</span> (<span class="keyword">m</span>.<span class="keyword">id</span>=v.code) <span class="keyword">AND</span> (v.code=consumption.queryCode)</span><br><span class="line"><span class="keyword">java</span>.lang.IndexOutOfBoundsException: Remember that ordinal <span class="keyword">parameters</span> <span class="keyword">are</span> <span class="number">1</span>-based!</span><br><span class="line">	<span class="keyword">at</span> org.hibernate.<span class="keyword">engine</span>.<span class="keyword">query</span>.ParameterMetadata.getOrdinalParameterDescriptor(ParameterMetadata.<span class="keyword">java</span>:<span class="number">55</span>)</span><br><span class="line">	<span class="keyword">at</span> org.hibernate.<span class="keyword">engine</span>.<span class="keyword">query</span>.ParameterMetadata.getOrdinalParameterExpectedType(ParameterMetadata.<span class="keyword">java</span>:<span class="number">61</span>)</span><br><span class="line">	<span class="keyword">at</span> org.hibernate.impl.AbstractQueryImpl.determineType(AbstractQueryImpl.<span class="keyword">java</span>:<span class="number">397</span>)</span><br><span class="line">	<span class="keyword">at</span> org.hibernate.impl.AbstractQueryImpl.setParameter(AbstractQueryImpl.<span class="keyword">java</span>:<span class="number">369</span>)</span><br><span class="line">	<span class="keyword">at</span> org.hibernate.ejb.QueryImpl.setParameter(QueryImpl.<span class="keyword">java</span>:<span class="number">234</span>)</span><br><span class="line">	<span class="keyword">at</span> sun.reflect.NativeMethodAccessorImpl.invoke0(<span class="keyword">Native</span> Method)</span><br><span class="line">	<span class="keyword">at</span> sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.<span class="keyword">java</span>:<span class="number">57</span>)</span><br><span class="line">	<span class="keyword">at</span> sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.<span class="keyword">java</span>:<span class="number">43</span>)</span><br><span class="line">	<span class="keyword">at</span> <span class="keyword">java</span>.lang.reflect.Method.invoke(Method.<span class="keyword">java</span>:<span class="number">606</span>)</span><br><span class="line">	<span class="keyword">at</span> org.springframework.orm.jpa.SharedEntityManagerCreator$DeferredQueryInvocationHandler.invoke(SharedEntityManagerCreator.<span class="keyword">java</span>:<span class="number">311</span>)</span><br><span class="line">	<span class="keyword">at</span> com.sun.proxy.$Proxy94.setParameter(<span class="keyword">Unknown</span> <span class="keyword">Source</span>)</span><br><span class="line">	...</span></span><br></pre></td></tr></table></figure>
+<p>这个问题 说明 对于 hibernate基础 掌握不扎实，对于 EJB JPA 概念理解不深</p>
+<h3 id="关联查询语句问题及处理（表、字段-not-mapped-）【hibernate-基础不扎实】"><a href="#关联查询语句问题及处理（表、字段-not-mapped-）【hibernate-基础不扎实】" class="headerlink" title="关联查询语句问题及处理（表、字段 not mapped ）【hibernate 基础不扎实】"></a>关联查询语句问题及处理（表、字段 not mapped ）【hibernate 基础不扎实】</h3><h4 id="EJB-JPA-实体管理器"><a href="#EJB-JPA-实体管理器" class="headerlink" title="EJB JPA 实体管理器"></a>EJB JPA 实体管理器</h4><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@PersistenceContext</span>(unitName = <span class="string">"huanyu-mbr-core.persistent-unit"</span>)</span><br><span class="line">	<span class="keyword">protected</span> EntityManager em;</span><br></pre></td></tr></table></figure>
+<h4 id="下述是问题，是因为-em-createQuery-“sql…”）-其中-sql-中-直接使用了-数据库表名称-view-memcon-，而不是-实体名称-Member"><a href="#下述是问题，是因为-em-createQuery-“sql…”）-其中-sql-中-直接使用了-数据库表名称-view-memcon-，而不是-实体名称-Member" class="headerlink" title="下述是问题，是因为 em.createQuery(“sql…”）,其中 sql 中 直接使用了 数据库表名称(view_memcon)，而不是 实体名称(Member)"></a>下述是问题，是因为 em.createQuery(“sql…”）,其中 sql 中 直接使用了 <em>数据库表名称</em>(view_memcon)，而不是 <em>实体名称</em>(Member)</h4><p>对于 视图的字段属性 的 操作：select  v.viewData.code from View_memcon v …  其中 View_memcon 是视图实体名称，v.viewData.code 是通过联合主键实体映射来映射视图字段</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">java<span class="class">.lang</span><span class="class">.IllegalArgumentException</span>: org<span class="class">.hibernate</span><span class="class">.hql</span><span class="class">.ast</span><span class="class">.QuerySyntaxException</span>: view_memcon is not mapped [SELECT <span class="function"><span class="title">COUNT</span><span class="params">(m.id)</span></span> FROM com<span class="class">.huanyu</span><span class="class">.mbr</span><span class="class">.core</span><span class="class">.consumption</span><span class="class">.dao</span><span class="class">.view_memcon</span> v, t_mbr m WHERE m<span class="class">.id</span> = v<span class="class">.memId</span> AND v<span class="class">.unionCode</span> = (select <span class="tag">p</span><span class="class">.queryCode</span> from t_consumption <span class="tag">p</span> where <span class="tag">p</span><span class="class">.code</span> = :code)]</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.ejb</span><span class="class">.AbstractEntityManagerImpl</span><span class="class">.throwPersistenceException</span>(AbstractEntityManagerImpl<span class="class">.java</span>:<span class="number">616</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.ejb</span><span class="class">.AbstractEntityManagerImpl</span><span class="class">.createQuery</span>(AbstractEntityManagerImpl<span class="class">.java</span>:<span class="number">95</span>)</span><br><span class="line">	at sun<span class="class">.reflect</span><span class="class">.GeneratedMethodAccessor62</span><span class="class">.invoke</span>(Unknown Source)</span><br><span class="line">	at sun<span class="class">.reflect</span><span class="class">.DelegatingMethodAccessorImpl</span><span class="class">.invoke</span>(DelegatingMethodAccessorImpl<span class="class">.java</span>:<span class="number">43</span>)</span><br><span class="line">	at java<span class="class">.lang</span><span class="class">.reflect</span><span class="class">.Method</span><span class="class">.invoke</span>(Method<span class="class">.java</span>:<span class="number">606</span>)</span><br><span class="line">	at org<span class="class">.springframework</span><span class="class">.orm</span><span class="class">.jpa</span><span class="class">.ExtendedEntityManagerCreator</span><span class="variable">$ExtendedEntityManagerInvocationHandler</span>.<span class="function"><span class="title">invoke</span><span class="params">(ExtendedEntityManagerCreator.java:<span class="number">366</span>)</span></span></span><br><span class="line">	at com<span class="class">.sun</span><span class="class">.proxy</span>.<span class="variable">$Proxy64</span>.<span class="function"><span class="title">createQuery</span><span class="params">(Unknown Source)</span></span></span><br><span class="line">	at sun<span class="class">.reflect</span><span class="class">.GeneratedMethodAccessor62</span><span class="class">.invoke</span>(Unknown Source)</span><br><span class="line">	at sun<span class="class">.reflect</span><span class="class">.DelegatingMethodAccessorImpl</span><span class="class">.invoke</span>(DelegatingMethodAccessorImpl<span class="class">.java</span>:<span class="number">43</span>)</span><br><span class="line">	at java<span class="class">.lang</span><span class="class">.reflect</span><span class="class">.Method</span><span class="class">.invoke</span>(Method<span class="class">.java</span>:<span class="number">606</span>)</span><br><span class="line">	at org<span class="class">.springframework</span><span class="class">.orm</span><span class="class">.jpa</span><span class="class">.SharedEntityManagerCreator</span><span class="variable">$SharedEntityManagerInvocationHandler</span>.<span class="function"><span class="title">invoke</span><span class="params">(SharedEntityManagerCreator.java:<span class="number">241</span>)</span></span></span><br><span class="line">	at com<span class="class">.sun</span><span class="class">.proxy</span>.<span class="variable">$Proxy64</span>.<span class="function"><span class="title">createQuery</span><span class="params">(Unknown Source)</span></span></span><br><span class="line">	...</span><br><span class="line">Caused by: org<span class="class">.hibernate</span><span class="class">.hql</span><span class="class">.ast</span><span class="class">.QuerySyntaxException</span>: view_memcon is not mapped [SELECT <span class="function"><span class="title">COUNT</span><span class="params">(m.id)</span></span> FROM com<span class="class">.huanyu</span><span class="class">.mbr</span><span class="class">.core</span><span class="class">.consumption</span><span class="class">.dao</span><span class="class">.view_memcon</span> v, t_mbr m WHERE m<span class="class">.id</span> = v<span class="class">.memId</span> AND v<span class="class">.unionCode</span> = (select <span class="tag">p</span><span class="class">.queryCode</span> from t_consumption <span class="tag">p</span> where <span class="tag">p</span><span class="class">.code</span> = :code)]</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.hql</span><span class="class">.ast</span><span class="class">.util</span><span class="class">.SessionFactoryHelper</span><span class="class">.requireClassPersister</span>(SessionFactoryHelper<span class="class">.java</span>:<span class="number">158</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.hql</span><span class="class">.ast</span><span class="class">.tree</span><span class="class">.FromElementFactory</span><span class="class">.addFromElement</span>(FromElementFactory<span class="class">.java</span>:<span class="number">87</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.hql</span><span class="class">.ast</span><span class="class">.tree</span><span class="class">.FromClause</span><span class="class">.addFromElement</span>(FromClause<span class="class">.java</span>:<span class="number">71</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.hql</span><span class="class">.ast</span><span class="class">.HqlSqlWalker</span><span class="class">.createFromElement</span>(HqlSqlWalker<span class="class">.java</span>:<span class="number">295</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.hql</span><span class="class">.antlr</span><span class="class">.HqlSqlBaseWalker</span><span class="class">.fromElement</span>(HqlSqlBaseWalker<span class="class">.java</span>:<span class="number">3228</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.hql</span><span class="class">.antlr</span><span class="class">.HqlSqlBaseWalker</span><span class="class">.fromElementList</span>(HqlSqlBaseWalker<span class="class">.java</span>:<span class="number">3112</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.hql</span><span class="class">.antlr</span><span class="class">.HqlSqlBaseWalker</span><span class="class">.fromClause</span>(HqlSqlBaseWalker<span class="class">.java</span>:<span class="number">720</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.hql</span><span class="class">.antlr</span><span class="class">.HqlSqlBaseWalker</span><span class="class">.query</span>(HqlSqlBaseWalker<span class="class">.java</span>:<span class="number">571</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.hql</span><span class="class">.antlr</span><span class="class">.HqlSqlBaseWalker</span><span class="class">.selectStatement</span>(HqlSqlBaseWalker<span class="class">.java</span>:<span class="number">288</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.hql</span><span class="class">.antlr</span><span class="class">.HqlSqlBaseWalker</span><span class="class">.statement</span>(HqlSqlBaseWalker<span class="class">.java</span>:<span class="number">231</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.hql</span><span class="class">.ast</span><span class="class">.QueryTranslatorImpl</span><span class="class">.analyze</span>(QueryTranslatorImpl<span class="class">.java</span>:<span class="number">231</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.hql</span><span class="class">.ast</span><span class="class">.QueryTranslatorImpl</span><span class="class">.doCompile</span>(QueryTranslatorImpl<span class="class">.java</span>:<span class="number">162</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.hql</span><span class="class">.ast</span><span class="class">.QueryTranslatorImpl</span><span class="class">.compile</span>(QueryTranslatorImpl<span class="class">.java</span>:<span class="number">113</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.engine</span><span class="class">.query</span><span class="class">.HQLQueryPlan</span>.&lt;init&gt;(HQLQueryPlan<span class="class">.java</span>:<span class="number">77</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.engine</span><span class="class">.query</span><span class="class">.HQLQueryPlan</span>.&lt;init&gt;(HQLQueryPlan<span class="class">.java</span>:<span class="number">56</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.engine</span><span class="class">.query</span><span class="class">.QueryPlanCache</span><span class="class">.getHQLQueryPlan</span>(QueryPlanCache<span class="class">.java</span>:<span class="number">72</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.impl</span><span class="class">.AbstractSessionImpl</span><span class="class">.getHQLQueryPlan</span>(AbstractSessionImpl<span class="class">.java</span>:<span class="number">133</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.impl</span><span class="class">.AbstractSessionImpl</span><span class="class">.createQuery</span>(AbstractSessionImpl<span class="class">.java</span>:<span class="number">112</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.impl</span><span class="class">.SessionImpl</span><span class="class">.createQuery</span>(SessionImpl<span class="class">.java</span>:<span class="number">1624</span>)</span><br><span class="line">	at org<span class="class">.hibernate</span><span class="class">.ejb</span><span class="class">.AbstractEntityManagerImpl</span><span class="class">.createQuery</span>(AbstractEntityManagerImpl<span class="class">.java</span>:<span class="number">92</span>)</span><br><span class="line">	... <span class="number">105</span> more</span><br></pre></td></tr></table></figure>
+<h3 id="分批量导出多个文件"><a href="#分批量导出多个文件" class="headerlink" title="分批量导出多个文件"></a>分批量导出多个文件</h3><p>由于导出数据量比较大，导出单个文件写入耗时性能降低，需要分批量导出多个文件，压缩上传到媒体服务器；google 到 <a href="http://www.mkyong.com/java/how-to-compress-files-in-zip-format/" target="_blank" rel="external">How to compress files in ZIP format</a><br>使用 java.util.zip.ZipEntry 进行导出操作</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line">AppCtxUtils  工具类</span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.huanyu.common.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.BeansException;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.DisposableBean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.ApplicationContextAware;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * <span class="doctag">@author</span> ares</span><br><span class="line"> * </span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppCtxUtils</span> <span class="keyword">implements</span> <span class="title">ApplicationContextAware</span>, <span class="title">DisposableBean</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> ApplicationContext appCtx;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">setApplicationContext</span><span class="params">(ApplicationContext appCtx1)</span> <span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">    appCtx = appCtx1;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="function">ApplicationContext <span class="title">getAppCtx</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    assertContextInjected();</span><br><span class="line">    <span class="keyword">return</span> appCtx;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">getBean</span><span class="params">(Class&lt;T&gt; clazz)</span> </span>&#123;</span><br><span class="line">    assertContextInjected();</span><br><span class="line">    <span class="function"><span class="keyword">return</span> appCtx.<span class="title">getBean</span><span class="params">(clazz)</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">getBean</span><span class="params">(String beanName)</span> </span>&#123;</span><br><span class="line">    assertContextInjected();</span><br><span class="line">    <span class="keyword">return</span> (T) appCtx.getBean(beanName);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">getBean</span><span class="params">(String beanName, Class&lt;T&gt; clazz)</span> </span>&#123;</span><br><span class="line">    assertContextInjected();</span><br><span class="line">    <span class="function"><span class="keyword">return</span> appCtx.<span class="title">getBean</span><span class="params">(beanName, clazz)</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="function"><span class="keyword">void</span> <span class="title">assertContextInjected</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (appCtx == <span class="keyword">null</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"applicaitonContext未注入!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    appCtx = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">文件 打包相关  方法</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 创建临时文件夹目录（供存放多个临时导出文件）</span><br><span class="line"> * </span><br><span class="line"> * <span class="doctag">@return</span> 创建的临时文件目录绝对路径</span><br><span class="line"> * <span class="doctag">@throws</span> Exception</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="function">String <span class="title">getTempFileDirPath</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">  <span class="comment">// 创建本地资源路径</span></span><br><span class="line">  String relativePath = SYSTEM_STATIC_FILE_PATH + <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyyMMdd-HHmmss"</span>).format(<span class="keyword">new</span> Date()) </span><br><span class="line">      + <span class="string">"-"</span> + UUID.randomUUID();</span><br><span class="line">  Resource resource = AppCtxUtils.getAppCtx().getResource(relativePath);</span><br><span class="line">  File file = resource.getFile();</span><br><span class="line">  <span class="keyword">if</span> (!file.exists()) &#123;</span><br><span class="line">    file.mkdirs();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  String realPath = resource.getFile().getPath();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> realPath;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 文件打包</span><br><span class="line"> * </span><br><span class="line"> * <span class="doctag">@return</span> zip文件路径</span><br><span class="line"> * <span class="doctag">@throws</span> IOException</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="function">String <span class="title">zipFile</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">  String zipFilePath = <span class="keyword">this</span>.template.getName() + <span class="string">"-"</span></span><br><span class="line">    + <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyyMMdd-HHmmss"</span>).format(<span class="keyword">new</span> Date()) + KEY_ZIPSUFFIX;</span><br><span class="line">  <span class="keyword">byte</span>[] buf = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">  FileOutputStream f = <span class="keyword">new</span> FileOutputStream(zipFilePath);</span><br><span class="line">  ZipOutputStream out = <span class="keyword">new</span> ZipOutputStream(f);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">for</span> (String filePath : <span class="keyword">this</span>.fileList) &#123;</span><br><span class="line">    File file = <span class="keyword">new</span> File(filePath);</span><br><span class="line">  </span><br><span class="line">    ZipEntry ze = <span class="keyword">new</span> ZipEntry(file.getName());</span><br><span class="line">    out.putNextEntry(ze);</span><br><span class="line">  </span><br><span class="line">    FileInputStream in = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="keyword">while</span> ((len = in.read(buf)) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      out.write(buf, <span class="number">0</span>, len);</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    in.close();</span><br><span class="line">  &#125;</span><br><span class="line">  out.closeEntry();</span><br><span class="line">  out.close();</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> zipFilePath;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>上述问题的处理解决过程中，个人 hibernate 基础 有待深入学习</p>
+<hr>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://www.cnblogs.com/-10086/archive/2012/09/16/2687550.html" target="_blank" rel="external">EJB之JPA(EntityManager)</a></p>
+<p><a href="http://www.iteye.com/problems/87622" target="_blank" rel="external">Hibernate怎样使用Annotation映射视图</a> 和 <a href="http://blog.csdn.net/flyemu/article/details/8302615" target="_blank" rel="external">Annotation对Hibernate中联合主键定义</a></p>
+<p><a href="http://stackoverflow.com/questions/14446048/hibernate-table-not-mapped-error" target="_blank" rel="external">Hibernate table not mapped error</a></p>
+<p><a href="http://www.mkyong.com/java/how-to-compress-files-in-zip-format/" target="_blank" rel="external">How to compress files in ZIP format</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hibernate/" rel="tag">#hibernate</a>
+          
+            <a href="/tags/hibernate映射/" rel="tag">#hibernate映射</a>
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/开发工具/eclipse 使用经验/" rel="next" title="Eclipse 使用经验">
+                <i class="fa fa-chevron-left"></i> Eclipse 使用经验
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/java/java基础/" rel="prev" title="java 基础">
+                java 基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="java/hibernate映射问题/"
+           data-title="hibernate 映射相关问题" data-url="http://aresLove.github.io/java/hibernate映射问题/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="ares" />
+          <p class="site-author-name" itemprop="name">ares</p>
+          <p class="site-description motion-element" itemprop="description">永恒的心，经年的梦，前行的路，执念一生.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/areslove" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求背景"><span class="nav-number">1.</span> <span class="nav-text">需求背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需求实现过程中处理的问题"><span class="nav-number">2.</span> <span class="nav-text">需求实现过程中处理的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#视图处理"><span class="nav-number">2.1.</span> <span class="nav-text">视图处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联查询语句问题及处理（表、字段-not-mapped-）【hibernate-基础不扎实】"><span class="nav-number">2.2.</span> <span class="nav-text">关联查询语句问题及处理（表、字段 not mapped ）【hibernate 基础不扎实】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#EJB-JPA-实体管理器"><span class="nav-number">2.2.1.</span> <span class="nav-text">EJB JPA 实体管理器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下述是问题，是因为-em-createQuery-“sql…”）-其中-sql-中-直接使用了-数据库表名称-view-memcon-，而不是-实体名称-Member"><span class="nav-number">2.2.2.</span> <span class="nav-text">下述是问题，是因为 em.createQuery(“sql…”）,其中 sql 中 直接使用了 数据库表名称(view_memcon)，而不是 实体名称(Member)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分批量导出多个文件"><span class="nav-number">2.3.</span> <span class="nav-text">分批量导出多个文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ares</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"aresLove"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
