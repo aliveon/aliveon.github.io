@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://aresLove.github.io/"/>
-  <updated>2017-03-05T14:17:31.508Z</updated>
+  <updated>2017-03-07T11:25:35.312Z</updated>
   <id>http://aresLove.github.io/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title>常用命令总结</title>
     <link href="http://aresLove.github.io/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>http://aresLove.github.io/日常总结/常用命令/</id>
-    <published>2017-03-05T14:17:31.508Z</published>
-    <updated>2017-03-05T14:17:31.508Z</updated>
+    <published>2017-03-07T11:25:35.312Z</published>
+    <updated>2017-03-07T11:25:35.312Z</updated>
     
     <content type="html">&lt;h2 id=&quot;网络异常&quot;&gt;&lt;a href=&quot;#网络异常&quot; class=&quot;headerlink&quot; title=&quot;网络异常&quot;&gt;&lt;/a&gt;网络异常&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;常用方法排查&lt;/p&gt;
@@ -61,6 +61,18 @@
 &lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;file&lt;/span&gt; | &lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -C lines &lt;span class=&quot;string&quot;&gt;&quot;key&quot;&lt;/span&gt; | less&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;其中，&lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -C lines 标识关键字上下多少行;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;示例：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cat&lt;/span&gt; /home/web/web-server.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; | &lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -C &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;abc@163.com&quot;&lt;/span&gt; | less&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;表示：在 /home/web/web-server.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; 中查找关键字为abc@&lt;span class=&quot;number&quot;&gt;163&lt;/span&gt;.&lt;span class=&quot;keyword&quot;&gt;com&lt;/span&gt;的日志，并显示该关键字上下&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;行内容&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;mysql&quot;&gt;&lt;a href=&quot;#mysql&quot; class=&quot;headerlink&quot; title=&quot;mysql&quot;&gt;&lt;/a&gt;mysql&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;存储过程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;查询数据库中的存储过程&lt;/p&gt;
+&lt;figure class=&quot;highlight oxygene&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;方法一：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;select&lt;/span&gt; `name` &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; MySQL.proc &lt;span class=&quot;keyword&quot;&gt;where&lt;/span&gt; db = &lt;span class=&quot;string&quot;&gt;&#39;your_db_name&#39;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; `&lt;span class=&quot;keyword&quot;&gt;type&lt;/span&gt;` = &lt;span class=&quot;string&quot;&gt;&#39;PROCEDURE&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;方法二：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;show &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;procedure&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;status&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;查看存储过程或函数的创建代码&lt;/p&gt;
+&lt;figure class=&quot;highlight oxygene&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;show &lt;span class=&quot;keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;procedure&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;proc_name&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;show &lt;span class=&quot;keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;func_name&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;常用快捷键&quot;&gt;&lt;a href=&quot;#常用快捷键&quot; class=&quot;headerlink&quot; title=&quot;常用快捷键&quot;&gt;&lt;/a&gt;常用快捷键&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;关闭窗口 &lt;code&gt;ctrl+w、ctrl+F4&lt;/code&gt;&lt;/li&gt;
