@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://aresLove.github.io/"/>
-  <updated>2017-03-07T11:25:35.312Z</updated>
+  <updated>2017-03-08T11:00:05.332Z</updated>
   <id>http://aresLove.github.io/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title>常用命令总结</title>
     <link href="http://aresLove.github.io/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>http://aresLove.github.io/日常总结/常用命令/</id>
-    <published>2017-03-07T11:25:35.312Z</published>
-    <updated>2017-03-07T11:25:35.312Z</updated>
+    <published>2017-03-08T11:00:05.332Z</published>
+    <updated>2017-03-08T11:00:05.332Z</updated>
     
     <content type="html">&lt;h2 id=&quot;网络异常&quot;&gt;&lt;a href=&quot;#网络异常&quot; class=&quot;headerlink&quot; title=&quot;网络异常&quot;&gt;&lt;/a&gt;网络异常&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;常用方法排查&lt;/p&gt;
@@ -60,6 +60,14 @@
 &lt;li&gt;&lt;p&gt;cat&lt;/p&gt;
 &lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;file&lt;/span&gt; | &lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -C lines &lt;span class=&quot;string&quot;&gt;&quot;key&quot;&lt;/span&gt; | less&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;其中，&lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -C lines 标识关键字上下多少行;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;示例：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cat&lt;/span&gt; /home/web/web-server.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; | &lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -C &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;abc@163.com&quot;&lt;/span&gt; | less&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;表示：在 /home/web/web-server.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; 中查找关键字为abc@&lt;span class=&quot;number&quot;&gt;163&lt;/span&gt;.&lt;span class=&quot;keyword&quot;&gt;com&lt;/span&gt;的日志，并显示该关键字上下&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;行内容&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;常用vim命令&quot;&gt;&lt;a href=&quot;#常用vim命令&quot; class=&quot;headerlink&quot; title=&quot;常用vim命令&quot;&gt;&lt;/a&gt;常用vim命令&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;i 进入编辑模式&lt;/li&gt;
+&lt;li&gt;esc 退出编辑模式&lt;/li&gt;
+&lt;li&gt;:wq  保存修改并退出&lt;/li&gt;
+&lt;li&gt;:q!  放弃修改并退出&lt;/li&gt;
+&lt;li&gt;dd （非编辑模式下）删除当前行&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;mysql&quot;&gt;&lt;a href=&quot;#mysql&quot; class=&quot;headerlink&quot; title=&quot;mysql&quot;&gt;&lt;/a&gt;mysql&lt;/h2&gt;&lt;ol&gt;
