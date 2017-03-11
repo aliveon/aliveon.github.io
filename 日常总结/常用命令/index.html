@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://aresLove.github.io/日常总结/常用命令/index.html">
 <meta property="og:site_name" content="放逐，天涯路">
 <meta property="og:description" content="日常常用命令总结">
-<meta property="og:updated_time" content="2017-03-08T11:00:05.332Z">
+<meta property="og:updated_time" content="2017-03-11T03:30:12.949Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用命令总结">
 <meta name="twitter:description" content="日常常用命令总结">
@@ -270,8 +270,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-08T19:00:05+08:00" content="2017-03-08">
-              2017-03-08
+            <time itemprop="dateCreated" datetime="2017-03-11T11:30:12+08:00" content="2017-03-11">
+              2017-03-11
             </time>
           </span>
 
@@ -362,9 +362,30 @@
 <li><p>cat</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cat</span> <span class="keyword">file</span> | <span class="keyword">grep</span> -C lines <span class="string">"key"</span> | less</span><br><span class="line">其中，<span class="keyword">grep</span> -C lines 标识关键字上下多少行;</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"><span class="keyword">cat</span> /home/web/web-server.<span class="built_in">log</span> | <span class="keyword">grep</span> -C <span class="number">50</span> <span class="string">"abc@163.com"</span> | less</span><br><span class="line">表示：在 /home/web/web-server.<span class="built_in">log</span> 中查找关键字为abc@<span class="number">163</span>.<span class="keyword">com</span>的日志，并显示该关键字上下<span class="number">50</span>行内容</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>pwd</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span>  查看当前目录</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mkdir</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> directory_name  创建文件夹</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>rm -rf (慎用：删除不可恢复)</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rm</span> -rf directory_name  递归删除目录下的所有文件,删除操作不可恢复,使用需谨慎</span><br><span class="line">一般禁用 <span class="keyword">rm</span> 操作， 通过 mv 命令将“需要删除的”文件移动到指定目录，由定时任务定期清空</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>tab 自动补全</p>
+</li>
+<li>ctrl+c  终止执行（退出正在执行的操作）</li>
+<li><p>mv </p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv <span class="keyword">from</span> <span class="keyword">to</span>   将文件（夹）剪切到某处</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cp</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp <span class="keyword">from</span> <span class="keyword">to</span>  将文件拷贝到某处</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>scp  <a href="http://www.cnblogs.com/wanqieddy/archive/2012/08/02/2619928.html" target="_blank" rel="external">Linux下scp的用法</a>、<a href="http://www.cnblogs.com/tocy/p/linux_scp_remote-file-transfer.html" target="_blank" rel="external">linux远程拷贝命令-scp</a></p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp local_file remote_username<span class="variable">@remote_ip</span><span class="symbol">:remote_folder</span>   从 本地 复制到 远程</span><br><span class="line">scp remote_username<span class="variable">@remote_ip</span><span class="symbol">:remote_folder</span> local_file   从 远程 复制到 本地</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 <hr>
-<h2 id="常用vim命令"><a href="#常用vim命令" class="headerlink" title="常用vim命令"></a>常用vim命令</h2><ol>
+<h2 id="常用vim命令-linux下vim命令详解、linux下vi命令大全"><a href="#常用vim命令-linux下vim命令详解、linux下vi命令大全" class="headerlink" title="常用vim命令 linux下vim命令详解、linux下vi命令大全"></a>常用vim命令 <a href="http://www.cnblogs.com/zhanglong0426/archive/2010/10/07/1845268.html" target="_blank" rel="external">linux下vim命令详解</a>、<a href="http://www.cnblogs.com/88999660/articles/1581524.html" target="_blank" rel="external">linux下vi命令大全</a></h2><ol>
 <li>i 进入编辑模式</li>
 <li>esc 退出编辑模式</li>
 <li>:wq  保存修改并退出</li>
@@ -391,7 +412,7 @@
 <li>快速锁机<code>win+l</code></li>
 </ol>
 <hr>
-<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">hexo</span> clean</span><br><span class="line">hexo g -<span class="built_in">debug</span></span><br><span class="line">hexo s -<span class="built_in">debug</span></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">hexo</span> clean</span><br><span class="line">hexo g -<span class="built_in">debug</span></span><br><span class="line">hexo s --<span class="built_in">debug</span>  &amp;&amp;  tail -f <span class="built_in">debug</span>.log</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 <hr>
 <h2 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h2><ol>
 <li><p>post<br><code>curl -u user:password -H &quot;Content-Type: application/json;charset=UTF-8&quot; -X POST -d &#39;{JSON}&#39;  URL</code></p>
@@ -418,7 +439,7 @@
 <li>查看镜像<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker images </span><br><span class="line">docker images <span class="string">| grep some_key</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">-b</span> <span class="keyword">master</span> <span class="title">responsitory_url</span></span><br><span class="line">git status</span><br><span class="line">git add --all</span><br><span class="line">git commit -a -m <span class="string">"commet"</span></span><br><span class="line">git push/git push origin <span class="literal">master</span></span><br></pre></td></tr></table></figure>
+<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. git <span class="keyword">clone</span> <span class="title">-b</span> <span class="keyword">master</span> <span class="title">responsitory_url</span></span><br><span class="line">   git <span class="keyword">clone</span> <span class="title">-b</span> <span class="keyword">master</span> <span class="title">https</span>://github.com/aresLove/java-core-learning-example ../java-core-learning-example</span><br><span class="line"><span class="number">2</span>. git status</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>. git add --all</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>. git commit -a -m <span class="string">"commet"</span></span><br><span class="line"></span><br><span class="line"><span class="number">5</span>. git push/git push origin <span class="literal">master</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -594,7 +615,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络异常"><span class="nav-number">1.</span> <span class="nav-text">网络异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程处理"><span class="nav-number">2.</span> <span class="nav-text">进程处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用windows命令"><span class="nav-number">3.</span> <span class="nav-text">常用windows命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用linux命令"><span class="nav-number">4.</span> <span class="nav-text">常用linux命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用vim命令"><span class="nav-number">5.</span> <span class="nav-text">常用vim命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql"><span class="nav-number">6.</span> <span class="nav-text">mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用快捷键"><span class="nav-number">7.</span> <span class="nav-text">常用快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">8.</span> <span class="nav-text">hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#curl"><span class="nav-number">9.</span> <span class="nav-text">curl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker"><span class="nav-number">10.</span> <span class="nav-text">docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git"><span class="nav-number">11.</span> <span class="nav-text">git</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络异常"><span class="nav-number">1.</span> <span class="nav-text">网络异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程处理"><span class="nav-number">2.</span> <span class="nav-text">进程处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用windows命令"><span class="nav-number">3.</span> <span class="nav-text">常用windows命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用linux命令"><span class="nav-number">4.</span> <span class="nav-text">常用linux命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用vim命令-linux下vim命令详解、linux下vi命令大全"><span class="nav-number">5.</span> <span class="nav-text">常用vim命令 linux下vim命令详解、linux下vi命令大全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql"><span class="nav-number">6.</span> <span class="nav-text">mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用快捷键"><span class="nav-number">7.</span> <span class="nav-text">常用快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">8.</span> <span class="nav-text">hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#curl"><span class="nav-number">9.</span> <span class="nav-text">curl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker"><span class="nav-number">10.</span> <span class="nav-text">docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git"><span class="nav-number">11.</span> <span class="nav-text">git</span></a></li></ol></div>
             
           </div>
         </section>
