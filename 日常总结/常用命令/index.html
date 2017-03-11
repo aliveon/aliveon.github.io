@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://aresLove.github.io/日常总结/常用命令/index.html">
 <meta property="og:site_name" content="放逐，天涯路">
 <meta property="og:description" content="日常常用命令总结">
-<meta property="og:updated_time" content="2017-03-11T03:30:12.949Z">
+<meta property="og:updated_time" content="2017-03-11T05:04:16.612Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用命令总结">
 <meta name="twitter:description" content="日常常用命令总结">
@@ -270,7 +270,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-11T11:30:12+08:00" content="2017-03-11">
+            <time itemprop="dateCreated" datetime="2017-03-11T13:04:16+08:00" content="2017-03-11">
               2017-03-11
             </time>
           </span>
@@ -382,6 +382,12 @@
 </li>
 <li><p>scp  <a href="http://www.cnblogs.com/wanqieddy/archive/2012/08/02/2619928.html" target="_blank" rel="external">Linux下scp的用法</a>、<a href="http://www.cnblogs.com/tocy/p/linux_scp_remote-file-transfer.html" target="_blank" rel="external">linux远程拷贝命令-scp</a></p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp local_file remote_username<span class="variable">@remote_ip</span><span class="symbol">:remote_folder</span>   从 本地 复制到 远程</span><br><span class="line">scp remote_username<span class="variable">@remote_ip</span><span class="symbol">:remote_folder</span> local_file   从 远程 复制到 本地</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>tail </p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f  <span class="command">log</span>.<span class="command">log</span>  实时输出查看<span class="command">log</span>日志</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>tar/(zip/unzip、rar/unrar) <a href="http://www.cnblogs.com/qq78292959/archive/2011/07/06/2099427.html" target="_blank" rel="external">Linux下的tar压缩解压缩命令详解</a>、<a href="http://www.cnblogs.com/wangkongming/p/4305962.html" target="_blank" rel="external">Linux中zip压缩和unzip解压缩命令详解</a></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">压缩</span><br><span class="line">tar -cvf target<span class="class">.tar</span> source_files</span><br><span class="line">zip target<span class="class">.zip</span> source_files</span><br><span class="line">解压</span><br><span class="line">tar -xvf source<span class="class">.tar</span> target</span><br><span class="line">unzip source<span class="class">.zip</span> target</span><br><span class="line"></span><br><span class="line">总结</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>、*<span class="class">.tar</span> 用 tar -xvf 解压</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、*<span class="class">.gz</span> 用 gzip -d或者gunzip 解压</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>、*<span class="class">.tar</span><span class="class">.gz</span>和*<span class="class">.tgz</span> 用 tar -xzf 解压</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>、*<span class="class">.bz2</span> 用 bzip2 -d或者用bunzip2 解压</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>、*<span class="class">.tar</span><span class="class">.bz2</span>用tar -xjf 解压</span><br><span class="line"></span><br><span class="line"><span class="number">6</span>、*<span class="class">.Z</span> 用 uncompress 解压</span><br><span class="line"></span><br><span class="line"><span class="number">7</span>、*<span class="class">.tar</span><span class="class">.Z</span> 用tar -xZf 解压</span><br><span class="line"></span><br><span class="line"><span class="number">8</span>、*<span class="class">.rar</span> 用 unrar e解压</span><br><span class="line"></span><br><span class="line"><span class="number">9</span>、*<span class="class">.zip</span> 用 unzip 解压</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
