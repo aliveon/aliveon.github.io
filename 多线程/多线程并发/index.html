@@ -1,0 +1,686 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="java,多线程,并发," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="放逐，天涯路" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="多线程并发处理总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多线程并发">
+<meta property="og:url" content="http://aresLove.github.io/多线程/多线程并发/index.html">
+<meta property="og:site_name" content="放逐，天涯路">
+<meta property="og:description" content="多线程并发处理总结">
+<meta property="og:updated_time" content="2017-03-20T15:16:04.781Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="多线程并发">
+<meta name="twitter:description" content="多线程并发处理总结">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://aresLove.github.io/多线程/多线程并发/"/>
+
+  <title> 多线程并发 | 放逐，天涯路 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">放逐，天涯路</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">永恒的心，经年的梦，前行的路，执念一生</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                多线程并发
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-20T23:16:04+08:00" content="2017-03-20">
+              2017-03-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/多线程/" itemprop="url" rel="index">
+                    <span itemprop="name">多线程</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/多线程/多线程并发/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="多线程/多线程并发/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="通过-jmeter-线程组发起并发对接口（插入数据）进行压力测试"><a href="#通过-jmeter-线程组发起并发对接口（插入数据）进行压力测试" class="headerlink" title="通过 jmeter 线程组发起并发对接口（插入数据）进行压力测试"></a>通过 jmeter 线程组发起并发对接口（插入数据）进行压力测试</h2><ol>
+<li>考虑处理方案:<ol>
+<li>通过 synchronized 同步互斥锁来控制</li>
+<li>通过 数据库业务唯一键约束，由数据库来控制并发产生的问题</li>
+<li>其他方式，暂时没有思路</li>
+</ol>
+</li>
+<li>决策<ol>
+<li>通过 synchronized 来控制并发，这将大大降低处理性能，使得多线程处理变成队列式依次进行</li>
+<li>经由数据库唯一键约束来控制并发，会出现 <code>org.hibernate.exception.ConstraintViolationException</code> 程序异常，然而，这种性能损耗相对于 synchronized 来讲，还是比较小的，<br>在保证处理性能的前提下，选择这种方式无疑要比 synchronized 好很多，而且本身就应该添加的业务唯一键约束，在没有比这更好的处理方案的情况下，选择这种方案更适合。</li>
+</ol>
+</li>
+<li>行动<ol>
+<li>升级数据库（清理脏数据，添加唯一键约束）</li>
+<li>升级程序（容错处理，日志记录）</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.jdbc.core.<span class="function">JdbcTemplate</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">fixDatas</span><span class="params">(JdbcTemplate template, Map&lt;String, String&gt; map)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (map == <span class="keyword">null</span> || map.size() &lt;= <span class="number">0</span>)</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    Iterator&lt;Entry&lt;String, String&gt;&gt; iterator = map.entrySet().iterator();</span><br><span class="line">    Entry&lt;String, String&gt; entry = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">      entry = iterator.next();</span><br><span class="line">      debug(MessageFormat.format(<span class="string">"&#123;0&#125;:&#123;1&#125;"</span>, entry.getKey(), entry.getValue()));</span><br><span class="line">      <span class="keyword">if</span> (StringUtils.isNotBlank(entry.getKey()) &amp;&amp; StringUtils.isNotBlank(entry.getValue()))</span><br><span class="line">        fixProcess(template, entry.getKey(), entry.getValue());</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">fixProcess</span><span class="params">(JdbcTemplate template, String tableName, String sql)</span> </span>&#123;</span><br><span class="line">LOG.info(MessageFormat.format(<span class="string">"======  开始修复 &#123;0&#125; 数据  ======"</span>, tableName));</span><br><span class="line"><span class="comment">// 检索待修复数据集</span></span><br><span class="line">List&lt;Object[]&gt; result = loadDataSet(template, sql);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 清理数据</span></span><br><span class="line">cleanData(template, result, tableName);</span><br><span class="line">LOG.info(MessageFormat.format(<span class="string">"======  已完成修复 &#123;0&#125; 数据  ======"</span>, tableName));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> List&lt;Object[]&gt; loadDataSet(JdbcTemplate template, String sql) &#123;</span><br><span class="line"><span class="comment">// 检索待修复数据集</span></span><br><span class="line">List&lt;Object[]&gt; result = template.query(sql, <span class="keyword">new</span> ResultSetExtractor&lt;List&lt;Object[]&gt;&gt;() &#123;</span><br><span class="line">  <span class="annotation">@Override</span></span><br><span class="line">  <span class="keyword">public</span> List&lt;Object[]&gt; extractData(ResultSet rs) <span class="keyword">throws</span> SQLException, DataAccessException &#123;</span><br><span class="line">	List&lt;Object[]&gt; res = <span class="keyword">new</span> ArrayList&lt;Object[]&gt;();</span><br><span class="line">	<span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">	  List&lt;Object&gt; singleLine = <span class="keyword">new</span> ArrayList&lt;Object&gt;();</span><br><span class="line">	  singleLine.add(rs.getString(<span class="string">"hst_num"</span>));</span><br><span class="line">	  singleLine.add(rs.getInt(<span class="string">"count_res"</span>));</span><br><span class="line">	  res.add(singleLine.toArray(<span class="keyword">new</span> Object[singleLine.size()]));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">LOG.info(<span class="string">"待修复处理数据:&#123;&#125;"</span>, JsonSimpleSerializer.serialize(result));</span><br><span class="line"><span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">cleanData</span><span class="params">(JdbcTemplate template, List&lt;Object[]&gt; result, String tableName)</span> </span>&#123;</span><br><span class="line"><span class="comment">// 清理数据</span></span><br><span class="line"><span class="keyword">if</span> (result != <span class="keyword">null</span> &amp;&amp; result.isEmpty() == <span class="keyword">false</span>) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> line = <span class="number">0</span>; line &lt; result.size(); line++) &#123;</span><br><span class="line">	List&lt;String&gt; rows = template.queryForList(MessageFormat</span><br><span class="line">		.format(<span class="string">"select uuid from &#123;0&#125; where hstNum = ? ORDER BY &#123;1&#125; asc"</span>, tableName,</span><br><span class="line">		  PAY_TRAN_TABLE_NAME.equals(tableName) ? <span class="string">"created"</span> : <span class="string">"createTime"</span>),</span><br><span class="line">	  <span class="keyword">new</span> Object[]&#123;result.get(line)[<span class="number">0</span>]&#125;, String.class);</span><br><span class="line">	debug(MessageFormat</span><br><span class="line">	  .format(<span class="string">"流水记录表 &#123;0&#125; 中重复流水号的 uuid:&#123;1&#125;"</span>, tableName, JsonSimpleSerializer.serialize(rows)));</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> row = <span class="number">1</span>; row &lt; rows.size(); row++) &#123;</span><br><span class="line">	  debug(MessageFormat.format(<span class="string">"清理流水记录表 &#123;0&#125;  记录为 uuid：&#123;1&#125; 的数据"</span>, tableName, rows.get(row)));</span><br><span class="line">	  template.update(MessageFormat.format(<span class="string">"DELETE from &#123;0&#125; where uuid = ? "</span>, tableName),</span><br><span class="line">		rows.get(row));</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">debug</span><span class="params">(String message)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (LOG.isDebugEnabled())</span><br><span class="line">  LOG.debug(message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="多线程并发处理事件"><a href="#多线程并发处理事件" class="headerlink" title="多线程并发处理事件"></a>多线程并发处理事件</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2017-03-16 10:43:55,896 [pool-9-thread-2] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 8eca780c658740b1a499baa1d7074e61 - run&#10;2017-03-16 10:43:55,897 [pool-9-thread-2] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 0639f5184db44f8a9659428a217f930e - handle: test, crm, 402880985ad4ba3c015ad50011720002, com.huanyu.mgate.core.weixin.ActiveCardEvent&#10;2017-03-16 10:43:55,897 [pool-9-thread-2] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 0639f5184db44f8a9659428a217f930e - handle: test, alipass, 402880985ad4ba3c015ad50011720002, com.huanyu.mgate.core.weixin.ActiveCardEvent&#10;2017-03-16 10:43:55,897 [pool-9-thread-2] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 0639f5184db44f8a9659428a217f930e - handle: test, weixin, 402880985ad4ba3c015ad50011720002, com.huanyu.mgate.core.weixin.ActiveCardEvent&#10;2017-03-16 10:43:55,908 [pool-9-thread-2] INFO com.huanyu.weixin.sdk.http.HttpsClient 0639f5184db44f8a9659428a217f930e - Request:&#10;==========================&#10;POST https://api.weixin.qq.com/card/membercard/userinfo/get?access_token=DSJ-g_DErgipWWCqY-cOoicJn-UuwgFbDdZ-3AOCw4uRG6VyjlvXRKVs9lDnQo6hLjRoIlNW06i-UhJKAnmFq7T_apxgI-bpqRfv1V38PlPNe17ETBfXDjSSxQT-RSGcVYEcAKDMPV&#10;&#123;&#34;code&#34;:&#34;weixin_code&#34;,&#34;card_id&#34;:&#34;weixin_card_id&#34;&#125;&#10;==========================&#10;2017-03-16 10:43:56,013 [pool-9-thread-2] INFO com.huanyu.weixin.sdk.http.HttpsClient 0639f5184db44f8a9659428a217f930e - Response: &#10;==========================&#10;200&#10;&#123;&#34;errcode&#34;:0,&#34;errmsg&#34;:&#34;ok&#34;,&#34;openid&#34;:&#34;weixin_open_id&#34;,&#34;nickname&#34;:&#34;nick_name&#34;,&#34;membership_number&#34;:&#34;weixin_code&#34;,&#34;bonus&#34;:0,&#34;sex&#34;:&#34;MALE&#34;,&#34;user_info&#34;:&#123;&#34;common_field_list&#34;:[&#123;&#34;name&#34;:&#34;USER_FORM_INFO_FLAG_MOBILE&#34;,&#34;value&#34;:&#34;12345678901&#34;,&#34;value_list&#34;:[]&#125;],&#34;custom_field_list&#34;:[]&#125;,&#34;user_card_status&#34;:&#34;NORMAL&#34;,&#34;has_active&#34;:true&#125;&#10;==========================&#10;2017-03-16 10:43:56,130 [pool-9-thread-2] INFO com.huanyu.weixin.sdk.http.HttpClient 0639f5184db44f8a9659428a217f930e - Request:&#10;==========================&#10;GET http://dly-bl.jcrm.test.hd123.cn:9080/jcrm-server-card/rest/mbr/getByMobileNum/12345678901&#10;==========================&#10;2017-03-16 10:43:56,366 [pool-9-thread-2] INFO com.huanyu.weixin.sdk.http.HttpClient 0639f5184db44f8a9659428a217f930e - Response: &#10;==========================&#10;200&#10;&#123;&#10;  &#34;errorCode&#34; : 0,&#10;  &#34;message&#34; : &#34;ok&#34;&#10;&#125;&#10;==========================&#10;2017-03-16 10:43:56,380 [pool-9-thread-2] INFO com.huanyu.ddps.config.impl.DefaultConfigStore 0639f5184db44f8a9659428a217f930e - &#24320;&#22987;&#30417;&#21548;&#37197;&#32622;&#26356;&#26032;&#65292;tenantId: test, name: offlinecrm.defaultOperateStore&#10;2017-03-16 10:43:56,407 [pool-9-thread-2] INFO com.huanyu.ddps.config.impl.DefaultConfigStore 0639f5184db44f8a9659428a217f930e - &#24320;&#22987;&#30417;&#21548;&#37197;&#32622;&#26356;&#26032;&#65292;tenantId: -, name: offlinecrm.paths&#10;2017-03-16 10:43:56,495 [pool-9-thread-2] INFO com.huanyu.mgate.core.weixin.WeixinEventHandler 0639f5184db44f8a9659428a217f930e - &#25512;&#36865;&#32473;crm&#65306;test, json_data&#10;2017-03-16 10:43:57,983 [pool-9-thread-2] INFO com.huanyu.mgate.core.weixin.WeixinEventHandler 0639f5184db44f8a9659428a217f930e - &#32465;&#23450;&#20250;&#21592;&#65292;&#31199;&#25143;: test, &#20250;&#21592;ID: 89638865b0474a9cb5db3aea1b9bd839, &#20250;&#21592;&#21495;: test_number_1&#10;2017-03-16 10:43:58,000 [pool-9-thread-2] INFO com.huanyu.weixin.sdk.http.HttpsClient 0639f5184db44f8a9659428a217f930e - Request:&#10;==========================&#10;POST https://api.weixin.qq.com/card/code/get?access_token=DSJ-g_DErgipWWCqY-cOoicJn-UuwgFbDdZ-3AOCw4uRG6VyjlvXRKVs9lDnQo6hLjRoIlNW06i-UhJKAnmFq7T_apxgI-bpqRfv1V38PlPNe17ETBfXDjSSxQT-RSGcVYEcAKDMPV&#10;&#123;&#34;check_consume&#34;:false,&#34;code&#34;:&#34;weixin_code&#34;,&#34;card_id&#34;:&#34;weixin_card_id&#34;&#125;&#10;==========================&#10;2017-03-16 10:43:58,116 [pool-9-thread-2] INFO com.huanyu.weixin.sdk.http.HttpsClient 0639f5184db44f8a9659428a217f930e - Response: &#10;==========================&#10;200&#10;&#123;&#34;errcode&#34;:0,&#34;errmsg&#34;:&#34;ok&#34;,&#34;card&#34;:&#123;&#34;card_id&#34;:&#34;weixin_card_id&#34;,&#34;begin_time&#34;:0,&#34;end_time&#34;:4294967295,&#34;bonus&#34;:0,&#34;code&#34;:&#34;weixin_code&#34;,&#34;membership_number&#34;:&#34;weixin_code&#34;&#125;,&#34;openid&#34;:&#34;weixin_open_id&#34;,&#34;can_consume&#34;:true,&#34;user_card_status&#34;:&#34;NORMAL&#34;&#125;&#10;==========================&#10;2017-03-16 10:43:58,116 [pool-9-thread-2] INFO com.huanyu.mgate.core.weixin.WeixinEventHandler 0639f5184db44f8a9659428a217f930e - &#28608;&#27963;&#24494;&#20449;&#20250;&#21592;&#21345;&#65292;&#31199;&#25143;: test, &#21345;&#21495;: weixin_code&#10;2017-03-16 10:43:58,117 [pool-9-thread-2] INFO com.huanyu.weixin.sdk.http.HttpsClient 0639f5184db44f8a9659428a217f930e - Request:&#10;==========================&#10;POST https://api.weixin.qq.com/card/membercard/activate?access_token=DSJ-g_DErgipWWCqY-cOoicJn-UuwgFbDdZ-3AOCw4uRG6VyjlvXRKVs9lDnQo6hLjRoIlNW06i-UhJKAnmFq7T_apxgI-bpqRfv1V38PlPNe17ETBfXDjSSxQT-RSGcVYEcAKDMPV&#10;&#123;&#34;membership_number&#34;:&#34;test_number_1&#34;,&#34;code&#34;:&#34;weixin_code&#34;,&#34;card_id&#34;:&#34;weixin_card_id&#34;&#125;&#10;==========================&#10;2017-03-16 10:43:58,228 [pool-9-thread-2] INFO com.huanyu.weixin.sdk.http.HttpsClient 0639f5184db44f8a9659428a217f930e - Response: &#10;==========================&#10;200&#10;&#123;&#34;errcode&#34;:0,&#34;errmsg&#34;:&#34;ok&#34;&#125;&#10;==========================&#10;2017-03-16 10:43:58,229 [pool-9-thread-2] INFO com.huanyu.mgate.core.PublishServiceImpl 0639f5184db44f8a9659428a217f930e - mgate-crmService-queryAccount&#65306;&#31199;&#25143;Id:test,&#26597;&#35810;&#31867;&#22411;:crm_mbr_id,&#26597;&#35810;&#30721;:test_number_1&#10;2017-03-16 10:43:58,427 [pool-9-thread-2] WARN com.huanyu.mgate.core.weixin.WeixinEventHandler 0639f5184db44f8a9659428a217f930e - &#21021;&#22987;&#21270;&#20250;&#21592;weixin_code&#24494;&#20449;&#31215;&#20998;&#36134;&#25143;,&#31215;&#20998;&#25968;:0.00&#10;2017-03-16 10:43:58,428 [pool-9-thread-2] INFO com.huanyu.weixin.sdk.http.HttpsClient 0639f5184db44f8a9659428a217f930e - Request:&#10;==========================&#10;POST https://api.weixin.qq.com/card/membercard/updateuser?access_token=DSJ-g_DErgipWWCqY-cOoicJn-UuwgFbDdZ-3AOCw4uRG6VyjlvXRKVs9lDnQo6hLjRoIlNW06i-UhJKAnmFq7T_apxgI-bpqRfv1V38PlPNe17ETBfXDjSSxQT-RSGcVYEcAKDMPV&#10;&#123;&#34;record_bonus&#34;:&#34;&#31215;&#20998;&#26356;&#26032;&#34;,&#34;notify_optional&#34;:&#123;&#34;is_notify_bonus&#34;:true&#125;,&#34;bonus&#34;:0,&#34;code&#34;:&#34;weixin_code&#34;,&#34;card_id&#34;:&#34;weixin_card_id&#34;&#125;&#10;==========================&#10;2017-03-16 10:43:58,619 [pool-9-thread-2] INFO com.huanyu.weixin.sdk.http.HttpsClient 0639f5184db44f8a9659428a217f930e - Response: &#10;==========================&#10;200&#10;&#123;&#34;errcode&#34;:-1,&#34;errmsg&#34;:&#34;system error hint: [7OsAaA0238e503]&#34;&#125;&#10;==========================&#10;2017-03-16 10:43:58,621 [pool-9-thread-2] INFO com.huanyu.mgate.core.weixin.WeixinEventHandler 0639f5184db44f8a9659428a217f930e - &#21021;&#22987;&#21270;&#20250;&#21592;test_number_1&#24494;&#20449;&#31215;&#20998;&#36134;&#25143;&#22833;&#36133;&#10;java.lang.Exception: &#24494;&#20449;&#31995;&#32479;&#32321;&#24537;&#65292;&#35831;&#31245;&#20505;&#20877;&#35797;(-1, system error hint: [7OsAaA0238e503])&#10;        at com.huanyu.weixin.sdk.WeixinClient.checkResult(WeixinClient.java:49)&#10;        at com.huanyu.weixin.sdk.cardcode.CardCodeClient.updateScore(CardCodeClient.java:181)&#10;        at com.huanyu.mgate.core.weixin.WeixinEventHandler.activateBycrmNo(WeixinEventHandler.java:312)&#10;        at com.huanyu.mgate.core.weixin.WeixinEventHandler.handleActive(WeixinEventHandler.java:261)&#10;        at com.huanyu.mgate.core.weixin.WeixinEventHandler.activateCard(WeixinEventHandler.java:195)&#10;        at com.huanyu.mgate.core.weixin.WeixinEventHandler.handle(WeixinEventHandler.java:109)&#10;        at com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher$HandleTask.run(MultiTenantEventDispatcher.java:264)&#10;        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)&#10;        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)&#10;        at java.lang.Thread.run(Thread.java:745)&#10;2017-03-16 10:43:58,651 [pool-9-thread-2] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 0639f5184db44f8a9659428a217f930e - test, weixin &#22788;&#29702; com.huanyu.mgate.core.weixin.ActiveCardEvent &#32791;&#26102; 2754 ms&#10;2017-03-16 10:43:58,651 [pool-9-thread-2] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 0639f5184db44f8a9659428a217f930e - handle: test, MerchantAcceptOrder, 402880985ad4ba3c015ad50011720002, com.huanyu.mgate.core.weixin.ActiveCardEvent&#10;2017-03-16 10:43:58,651 [pool-9-thread-2] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 0639f5184db44f8a9659428a217f930e - handle: test, alimerchantupdate, 402880985ad4ba3c015ad50011720002, com.huanyu.mgate.core.weixin.ActiveCardEvent&#10;2017-03-16 10:43:58,651 [pool-9-thread-2] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 0639f5184db44f8a9659428a217f930e - handle: test, feifanMemberAsyncRegister, 402880985ad4ba3c015ad50011720002, com.huanyu.mgate.core.weixin.ActiveCardEvent&#10;2017-03-16 10:43:58,651 [pool-9-thread-2] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 0639f5184db44f8a9659428a217f930e - &#21024;&#38500;&#20107;&#20214;&#65306;402880985ad4ba3c015ad50011720002&#10;&#10;&#10;&#10;&#10;&#10;2017-03-16 10:43:57,202 [pool-9-thread-3] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 037e8b865132482d9be1eaf104042236 - run&#10;2017-03-16 10:43:57,203 [pool-9-thread-3] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 6969ef8818c34b34aeb86ea755f21e52 - handle: test, crm, 402880985ad4ba3c015ad50011720002, com.huanyu.mgate.core.weixin.ActiveCardEvent&#10;2017-03-16 10:43:57,203 [pool-9-thread-3] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 6969ef8818c34b34aeb86ea755f21e52 - handle: test, alipass, 402880985ad4ba3c015ad50011720002, com.huanyu.mgate.core.weixin.ActiveCardEvent&#10;2017-03-16 10:43:57,203 [pool-9-thread-3] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 6969ef8818c34b34aeb86ea755f21e52 - handle: test, weixin, 402880985ad4ba3c015ad50011720002, com.huanyu.mgate.core.weixin.ActiveCardEvent&#10;2017-03-16 10:43:57,218 [DDPS-Scheduler-Thread-10] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher fe82751489dd4d6eb4c39c92cad9a012 - &#31199;&#25143; test &#20849;&#25214;&#21040; 1 &#20010;&#20107;&#20214;&#65292;&#32791;&#26102;&#65306;16 ms&#10;2017-03-16 10:43:57,219 [DDPS-Scheduler-Thread-10] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher fe82751489dd4d6eb4c39c92cad9a012 - &#24573;&#30053;: 402880985ad4ba3c015ad50011720002&#10;2017-03-16 10:43:57,219 [DDPS-Scheduler-Thread-10] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher fe82751489dd4d6eb4c39c92cad9a012 - &#36339;&#36807;&#24403;&#21069;&#39029;&#65292;&#26102;&#38388;&#29255;+1&#10;2017-03-16 10:43:57,219 [pool-9-thread-3] INFO com.huanyu.weixin.sdk.http.HttpsClient 6969ef8818c34b34aeb86ea755f21e52 - Request:&#10;==========================&#10;POST https://api.weixin.qq.com/card/membercard/userinfo/get?access_token=DSJ-g_DErgipWWCqY-cOoicJn-UuwgFbDdZ-3AOCw4uRG6VyjlvXRKVs9lDnQo6hLjRoIlNW06i-UhJKAnmFq7T_apxgI-bpqRfv1V38PlPNe17ETBfXDjSSxQT-RSGcVYEcAKDMPV&#10;&#123;&#34;code&#34;:&#34;weixin_code&#34;,&#34;card_id&#34;:&#34;weixin_card_id&#34;&#125;&#10;==========================&#10;2017-03-16 10:43:57,221 [DDPS-Scheduler-Thread-10] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher fe82751489dd4d6eb4c39c92cad9a012 - &#31199;&#25143; test &#20849;&#25214;&#21040; 0 &#20010;&#20107;&#20214;&#65292;&#32791;&#26102;&#65306;2 ms&#10;2017-03-16 10:43:57,344 [pool-9-thread-3] INFO com.huanyu.weixin.sdk.http.HttpsClient 6969ef8818c34b34aeb86ea755f21e52 - Response: &#10;==========================&#10;200&#10;&#123;&#34;errcode&#34;:0,&#34;errmsg&#34;:&#34;ok&#34;,&#34;openid&#34;:&#34;weixin_open_id&#34;,&#34;nickname&#34;:&#34;nick_name&#34;,&#34;membership_number&#34;:&#34;weixin_code&#34;,&#34;bonus&#34;:0,&#34;sex&#34;:&#34;MALE&#34;,&#34;user_info&#34;:&#123;&#34;common_field_list&#34;:[&#123;&#34;name&#34;:&#34;USER_FORM_INFO_FLAG_MOBILE&#34;,&#34;value&#34;:&#34;12345678901&#34;,&#34;value_list&#34;:[]&#125;],&#34;custom_field_list&#34;:[]&#125;,&#34;user_card_status&#34;:&#34;NORMAL&#34;,&#34;has_active&#34;:true&#125;&#10;==========================&#10;2017-03-16 10:43:57,421 [pool-9-thread-3] INFO com.huanyu.weixin.sdk.http.HttpClient 6969ef8818c34b34aeb86ea755f21e52 - Request:&#10;==========================&#10;GET http://dly-bl.jcrm.test.hd123.cn:9080/jcrm-server-card/rest/mbr/getByMobileNum/12345678901&#10;==========================&#10;2017-03-16 10:43:57,464 [pool-9-thread-3] INFO com.huanyu.weixin.sdk.http.HttpClient 6969ef8818c34b34aeb86ea755f21e52 - Response: &#10;==========================&#10;200&#10;&#123;&#10;  &#34;errorCode&#34; : 0,&#10;  &#34;message&#34; : &#34;ok&#34;&#10;&#125;&#10;==========================&#10;2017-03-16 10:43:57,477 [pool-9-thread-3] INFO com.huanyu.mgate.core.weixin.WeixinEventHandler 6969ef8818c34b34aeb86ea755f21e52 - &#25512;&#36865;&#32473;crm&#65306;test, json_data&#10;2017-03-16 10:43:58,384 [pool-9-thread-3] INFO com.huanyu.mgate.core.weixin.WeixinEventHandler 6969ef8818c34b34aeb86ea755f21e52 - &#32465;&#23450;&#20250;&#21592;&#65292;&#31199;&#25143;: test, &#20250;&#21592;ID: 89638865b0474a9cb5db3aea1b9bd839, &#32447;&#19979;&#20250;&#21592;&#21495;: test_number_2&#10;2017-03-16 10:43:58,403 [pool-9-thread-3] INFO com.huanyu.weixin.sdk.http.HttpsClient 6969ef8818c34b34aeb86ea755f21e52 - Request:&#10;==========================&#10;POST https://api.weixin.qq.com/card/code/get?access_token=DSJ-g_DErgipWWCqY-cOoicJn-UuwgFbDdZ-3AOCw4uRG6VyjlvXRKVs9lDnQo6hLjRoIlNW06i-UhJKAnmFq7T_apxgI-bpqRfv1V38PlPNe17ETBfXDjSSxQT-RSGcVYEcAKDMPV&#10;&#123;&#34;check_consume&#34;:false,&#34;code&#34;:&#34;weixin_code&#34;,&#34;card_id&#34;:&#34;weixin_card_id&#34;&#125;&#10;==========================&#10;2017-03-16 10:43:58,482 [pool-9-thread-3] INFO com.huanyu.weixin.sdk.http.HttpsClient 6969ef8818c34b34aeb86ea755f21e52 - Response: &#10;==========================&#10;200&#10;&#123;&#34;errcode&#34;:0,&#34;errmsg&#34;:&#34;ok&#34;,&#34;card&#34;:&#123;&#34;card_id&#34;:&#34;weixin_card_id&#34;,&#34;begin_time&#34;:0,&#34;end_time&#34;:4294967295,&#34;bonus&#34;:0,&#34;code&#34;:&#34;weixin_code&#34;,&#34;membership_number&#34;:&#34;test_number_1&#34;&#125;,&#34;openid&#34;:&#34;weixin_open_id&#34;,&#34;can_consume&#34;:true,&#34;user_card_status&#34;:&#34;NORMAL&#34;&#125;&#10;==========================&#10;2017-03-16 10:43:58,483 [pool-9-thread-3] INFO com.huanyu.mgate.core.weixin.WeixinEventHandler 6969ef8818c34b34aeb86ea755f21e52 - &#28608;&#27963;&#24494;&#20449;&#20250;&#21592;&#21345;&#65292;&#31199;&#25143;: test, &#21345;&#21495;: weixin_code&#10;2017-03-16 10:43:58,483 [pool-9-thread-3] INFO com.huanyu.weixin.sdk.http.HttpsClient 6969ef8818c34b34aeb86ea755f21e52 - Request:&#10;==========================&#10;POST https://api.weixin.qq.com/card/membercard/activate?access_token=DSJ-g_DErgipWWCqY-cOoicJn-UuwgFbDdZ-3AOCw4uRG6VyjlvXRKVs9lDnQo6hLjRoIlNW06i-UhJKAnmFq7T_apxgI-bpqRfv1V38PlPNe17ETBfXDjSSxQT-RSGcVYEcAKDMPV&#10;&#123;&#34;membership_number&#34;:&#34;test_number_2&#34;,&#34;code&#34;:&#34;weixin_code&#34;,&#34;card_id&#34;:&#34;weixin_card_id&#34;&#125;&#10;==========================&#10;2017-03-16 10:43:58,617 [pool-9-thread-3] INFO com.huanyu.weixin.sdk.http.HttpsClient 6969ef8818c34b34aeb86ea755f21e52 - Response: &#10;==========================&#10;200&#10;&#123;&#34;errcode&#34;:0,&#34;errmsg&#34;:&#34;ok&#34;&#125;&#10;==========================&#10;2017-03-16 10:43:58,618 [pool-9-thread-3] INFO com.huanyu.mgate.core.PublishServiceImpl 6969ef8818c34b34aeb86ea755f21e52 - mgate-crmService-queryAccount&#65306;&#31199;&#25143;Id:test,&#26597;&#35810;&#31867;&#22411;:crm_mbr_id,&#26597;&#35810;&#30721;:test_number_2&#10;2017-03-16 10:43:58,733 [pool-9-thread-3] WARN com.huanyu.mgate.core.weixin.WeixinEventHandler 6969ef8818c34b34aeb86ea755f21e52 - &#21021;&#22987;&#21270;&#20250;&#21592;weixin_code&#24494;&#20449;&#31215;&#20998;&#36134;&#25143;,&#31215;&#20998;&#25968;:0.00&#10;2017-03-16 10:43:58,734 [pool-9-thread-3] INFO com.huanyu.weixin.sdk.http.HttpsClient 6969ef8818c34b34aeb86ea755f21e52 - Request:&#10;==========================&#10;POST https://api.weixin.qq.com/card/membercard/updateuser?access_token=DSJ-g_DErgipWWCqY-cOoicJn-UuwgFbDdZ-3AOCw4uRG6VyjlvXRKVs9lDnQo6hLjRoIlNW06i-UhJKAnmFq7T_apxgI-bpqRfv1V38PlPNe17ETBfXDjSSxQT-RSGcVYEcAKDMPV&#10;&#123;&#34;record_bonus&#34;:&#34;&#31215;&#20998;&#26356;&#26032;&#34;,&#34;notify_optional&#34;:&#123;&#34;is_notify_bonus&#34;:true&#125;,&#34;bonus&#34;:0,&#34;code&#34;:&#34;weixin_code&#34;,&#34;card_id&#34;:&#34;weixin_card_id&#34;&#125;&#10;==========================&#10;2017-03-16 10:43:58,850 [pool-9-thread-3] INFO com.huanyu.weixin.sdk.http.HttpsClient 6969ef8818c34b34aeb86ea755f21e52 - Response: &#10;==========================&#10;200&#10;&#123;&#34;errcode&#34;:0,&#34;errmsg&#34;:&#34;ok&#34;,&#34;result_bonus&#34;:0,&#34;result_balance&#34;:0,&#34;openid&#34;:&#34;weixin_open_id&#34;&#125;&#10;==========================&#10;2017-03-16 10:43:58,879 [pool-9-thread-3] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 6969ef8818c34b34aeb86ea755f21e52 - test, weixin &#22788;&#29702; com.huanyu.mgate.core.weixin.ActiveCardEvent &#32791;&#26102; 1676 ms&#10;2017-03-16 10:43:58,879 [pool-9-thread-3] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 6969ef8818c34b34aeb86ea755f21e52 - handle: test, MerchantAcceptOrder, 402880985ad4ba3c015ad50011720002, com.huanyu.mgate.core.weixin.ActiveCardEvent&#10;2017-03-16 10:43:58,879 [pool-9-thread-3] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 6969ef8818c34b34aeb86ea755f21e52 - handle: test, alimerchantupdate, 402880985ad4ba3c015ad50011720002, com.huanyu.mgate.core.weixin.ActiveCardEvent&#10;2017-03-16 10:43:58,879 [pool-9-thread-3] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 6969ef8818c34b34aeb86ea755f21e52 - handle: test, feifanMemberAsyncRegister, 402880985ad4ba3c015ad50011720002, com.huanyu.mgate.core.weixin.ActiveCardEvent&#10;2017-03-16 10:43:58,880 [pool-9-thread-3] INFO com.huanyu.multitenant.cqrs.event.MultiTenantEventDispatcher 6969ef8818c34b34aeb86ea755f21e52 - &#21024;&#38500;&#20107;&#20214;&#65306;402880985ad4ba3c015ad50011720002</span><br></pre></td></tr></table></figure>
+<ol>
+<li>分析日志<br>由上述日志分析可见，数据库事件：402880985ad4ba3c015ad50011720002 经由多租户事件分发器：MultiTenantEventDispatcher 分发给多个事件监听处理器时，<br>并发产生了两个线程（线程：pool-9-thread-3 和 线程：pool-9-thread-2）同时处理一个事件,业务关键在于 <code>推送给crm：test, json_data</code> 这一处，这里将<br>导致将本系统同一份会员数据（同一个会员数据并发同步推送给crm系统）并发同步给crm系统，导致crm系统产生了两个会员（test_number_1 和 test_number_2）。</li>
+<li>为了解决这种并发场景下的问题产生，需要给同步crm系统这块添加同步互斥锁，因为这是事件处理，性能可以适当降低要求，因此，使用 synchronized 来控制并发。</li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://blog.csdn.net/escaflone/article/details/10418651" target="_blank" rel="external">Java 多线程 并发编程</a></p>
+<p><a href="http://www.cnblogs.com/yshb/archive/2012/06/15/2550367.html" target="_blank" rel="external">JAVA多线程与并发学习总结</a></p>
+<p><a href="http://blog.csdn.net/zly9923218/article/details/51330995" target="_blank" rel="external">SQL 索引最左前缀原理</a></p>
+<p><a href="http://www.kancloud.cn/kancloud/theory-of-mysql-index/41857" target="_blank" rel="external">MySQL索引背后的数据结构及算法原理-最左前缀原理与相关优化</a></p>
+<p><a href="https://yq.aliyun.com/articles/38328" target="_blank" rel="external">数据库索引的实现原理及查询优化</a></p>
+<p><a href="http://www.cnblogs.com/petitprince/archive/2010/11/23/1885994.html" target="_blank" rel="external">50种方法优化SQL Server</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+            <a href="/tags/多线程/" rel="tag">#多线程</a>
+          
+            <a href="/tags/并发/" rel="tag">#并发</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/前端/前端技巧归纳总结/" rel="next" title="前端资料整理">
+                <i class="fa fa-chevron-left"></i> 前端资料整理
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="多线程/多线程并发/"
+           data-title="多线程并发" data-url="http://aresLove.github.io/多线程/多线程并发/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="ares" />
+          <p class="site-author-name" itemprop="name">ares</p>
+          <p class="site-description motion-element" itemprop="description">永恒的心，经年的梦，前行的路，执念一生.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/areslove" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过-jmeter-线程组发起并发对接口（插入数据）进行压力测试"><span class="nav-number">1.</span> <span class="nav-text">通过 jmeter 线程组发起并发对接口（插入数据）进行压力测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程并发处理事件"><span class="nav-number">2.</span> <span class="nav-text">多线程并发处理事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ares</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"aresLove"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
