@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://aresLove.github.io/"/>
-  <updated>2017-03-20T15:56:16.027Z</updated>
+  <updated>2017-03-23T09:13:51.168Z</updated>
   <id>http://aresLove.github.io/</id>
   
   <author>
@@ -14,6 +14,164 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常用命令总结</title>
+    <link href="http://aresLove.github.io/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://aresLove.github.io/日常总结/常用命令/</id>
+    <published>2017-03-23T09:13:51.168Z</published>
+    <updated>2017-03-23T09:13:51.168Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;网络异常&quot;&gt;&lt;a href=&quot;#网络异常&quot; class=&quot;headerlink&quot; title=&quot;网络异常&quot;&gt;&lt;/a&gt;网络异常&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;常用方法排查&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;判定网络是否可达   &lt;code&gt;ping www.baidu.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;跟踪路由：判断网络节点是否畅通  &lt;code&gt;tracert -d www.baidu.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;用telnet命令来测试端口号是否正常打开还是关闭状态   &lt;code&gt;telnet www.baidu.com 2182&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;dns 解析(本地 hosts 配置：C:\Windows\System32\drivers\etc)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;刷新DNS缓存 &lt;code&gt;ipconfig /flushdns&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;进程处理&quot;&gt;&lt;a href=&quot;#进程处理&quot; class=&quot;headerlink&quot; title=&quot;进程处理&quot;&gt;&lt;/a&gt;进程处理&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;端口占用  &lt;ul&gt;
+&lt;li&gt;查看所有的端口占用情况  &lt;code&gt;netstat -ano&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查看指定端口占用情况   &lt;code&gt;netstat -anno | findstr &amp;quot;端口号&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查看PID对应的进程  &lt;code&gt;tasklist|findstr &amp;quot;进程号&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;终止一个进程   &lt;code&gt;taskkill /pid 进程号&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;强行终止进程   &lt;code&gt;taskkill /f /pid 进程号&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;常用windows命令&quot;&gt;&lt;a href=&quot;#常用windows命令&quot; class=&quot;headerlink&quot; title=&quot;常用windows命令&quot;&gt;&lt;/a&gt;常用windows命令&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;cd &lt;code&gt;cd /d target_url&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;cls &lt;code&gt;cls&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;常用linux命令&quot;&gt;&lt;a href=&quot;#常用linux命令&quot; class=&quot;headerlink&quot; title=&quot;常用linux命令&quot;&gt;&lt;/a&gt;常用linux命令&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;ls/ll &lt;/p&gt;
+&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;ls&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;ls&lt;/span&gt; -rlth&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;ll&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;cat&lt;/p&gt;
+&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;file&lt;/span&gt; | &lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -C lines &lt;span class=&quot;string&quot;&gt;&quot;key&quot;&lt;/span&gt; | less&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;其中，&lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -C lines 标识关键字上下多少行;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;示例：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cat&lt;/span&gt; /home/web/web-server.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; | &lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -C &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;abc@163.com&quot;&lt;/span&gt; | less&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;表示：在 /home/web/web-server.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; 中查找关键字为abc@&lt;span class=&quot;number&quot;&gt;163&lt;/span&gt;.&lt;span class=&quot;keyword&quot;&gt;com&lt;/span&gt;的日志，并显示该关键字上下&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;行内容&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;实例：&lt;span class=&quot;keyword&quot;&gt;cat&lt;/span&gt; /hdapp/&lt;span class=&quot;number&quot;&gt;7001&lt;/span&gt;/crm/logs/crm-server.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; | &lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -C &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;扣减积分失败&quot;&lt;/span&gt; | less&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;pwd&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;pwd&lt;/span&gt;  查看当前目录&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;mkdir&lt;/p&gt;
+&lt;figure class=&quot;highlight dos&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;mkdir&lt;/span&gt; directory_name  创建文件夹&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;rm -rf (慎用：删除不可恢复)&lt;/p&gt;
+&lt;figure class=&quot;highlight stata&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;rm&lt;/span&gt; -rf directory_name  递归删除目录下的所有文件,删除操作不可恢复,使用需谨慎&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;一般禁用 &lt;span class=&quot;keyword&quot;&gt;rm&lt;/span&gt; 操作， 通过 mv 命令将“需要删除的”文件移动到指定目录，由定时任务定期清空&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;tab 自动补全&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;ctrl+c  终止执行（退出正在执行的操作）&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;mv &lt;/p&gt;
+&lt;figure class=&quot;highlight applescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mv &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt;   将文件（夹）剪切到某处&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;cp&lt;/p&gt;
+&lt;figure class=&quot;highlight applescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cp &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt;  将文件拷贝到某处&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;scp  &lt;a href=&quot;http://www.cnblogs.com/wanqieddy/archive/2012/08/02/2619928.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Linux下scp的用法&lt;/a&gt;、&lt;a href=&quot;http://www.cnblogs.com/tocy/p/linux_scp_remote-file-transfer.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;linux远程拷贝命令-scp&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight elixir&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;scp local_file remote_username&lt;span class=&quot;variable&quot;&gt;@remote_ip&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:remote_folder&lt;/span&gt;   从 本地 复制到 远程&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;scp remote_username&lt;span class=&quot;variable&quot;&gt;@remote_ip&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:remote_folder&lt;/span&gt; local_file   从 远程 复制到 本地&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;tail &lt;/p&gt;
+&lt;figure class=&quot;highlight applescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tail -f  &lt;span class=&quot;command&quot;&gt;log&lt;/span&gt;.&lt;span class=&quot;command&quot;&gt;log&lt;/span&gt;  实时输出查看&lt;span class=&quot;command&quot;&gt;log&lt;/span&gt;日志&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;tar/(zip/unzip、rar/unrar) &lt;a href=&quot;http://www.cnblogs.com/qq78292959/archive/2011/07/06/2099427.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Linux下的tar压缩解压缩命令详解&lt;/a&gt;、&lt;a href=&quot;http://www.cnblogs.com/wangkongming/p/4305962.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Linux中zip压缩和unzip解压缩命令详解&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;压缩&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tar -cvf target&lt;span class=&quot;class&quot;&gt;.tar&lt;/span&gt; source_files&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;zip target&lt;span class=&quot;class&quot;&gt;.zip&lt;/span&gt; source_files&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tar -xvf source&lt;span class=&quot;class&quot;&gt;.tar&lt;/span&gt; target&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;unzip source&lt;span class=&quot;class&quot;&gt;.zip&lt;/span&gt; target&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;总结&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.tar&lt;/span&gt; 用 tar -xvf 解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.gz&lt;/span&gt; 用 gzip -d或者gunzip 解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.tar&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.gz&lt;/span&gt;和*&lt;span class=&quot;class&quot;&gt;.tgz&lt;/span&gt; 用 tar -xzf 解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.bz2&lt;/span&gt; 用 bzip2 -d或者用bunzip2 解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.tar&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.bz2&lt;/span&gt;用tar -xjf 解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.Z&lt;/span&gt; 用 uncompress 解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.tar&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.Z&lt;/span&gt; 用tar -xZf 解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.rar&lt;/span&gt; 用 unrar e解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.zip&lt;/span&gt; 用 unzip 解压&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;常用vim命令-linux下vim命令详解、linux下vi命令大全&quot;&gt;&lt;a href=&quot;#常用vim命令-linux下vim命令详解、linux下vi命令大全&quot; class=&quot;headerlink&quot; title=&quot;常用vim命令 linux下vim命令详解、linux下vi命令大全&quot;&gt;&lt;/a&gt;常用vim命令 &lt;a href=&quot;http://www.cnblogs.com/zhanglong0426/archive/2010/10/07/1845268.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;linux下vim命令详解&lt;/a&gt;、&lt;a href=&quot;http://www.cnblogs.com/88999660/articles/1581524.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;linux下vi命令大全&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;i 进入编辑模式&lt;/li&gt;
+&lt;li&gt;esc 退出编辑模式&lt;/li&gt;
+&lt;li&gt;:wq  保存修改并退出&lt;/li&gt;
+&lt;li&gt;:q!  放弃修改并退出&lt;/li&gt;
+&lt;li&gt;dd （非编辑模式下）删除当前行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;mysql&quot;&gt;&lt;a href=&quot;#mysql&quot; class=&quot;headerlink&quot; title=&quot;mysql&quot;&gt;&lt;/a&gt;mysql&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;存储过程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;查询数据库中的存储过程&lt;/p&gt;
+&lt;figure class=&quot;highlight oxygene&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;方法一：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;select&lt;/span&gt; `name` &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; MySQL.proc &lt;span class=&quot;keyword&quot;&gt;where&lt;/span&gt; db = &lt;span class=&quot;string&quot;&gt;&#39;your_db_name&#39;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; `&lt;span class=&quot;keyword&quot;&gt;type&lt;/span&gt;` = &lt;span class=&quot;string&quot;&gt;&#39;PROCEDURE&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;方法二：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;show &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;procedure&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;status&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;查看存储过程或函数的创建代码&lt;/p&gt;
+&lt;figure class=&quot;highlight oxygene&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;show &lt;span class=&quot;keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;procedure&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;proc_name&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;show &lt;span class=&quot;keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;func_name&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;常用快捷键&quot;&gt;&lt;a href=&quot;#常用快捷键&quot; class=&quot;headerlink&quot; title=&quot;常用快捷键&quot;&gt;&lt;/a&gt;常用快捷键&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;关闭窗口 &lt;code&gt;ctrl+w、ctrl+F4&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;关机&lt;code&gt;alt+F4&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;快速切换&lt;code&gt;alt+tab/ctrl+tab&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;快速锁机&lt;code&gt;win+l&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;hexo&quot;&gt;&lt;a href=&quot;#hexo&quot; class=&quot;headerlink&quot; title=&quot;hexo&quot;&gt;&lt;/a&gt;hexo&lt;/h2&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title&quot;&gt;hexo&lt;/span&gt; clean&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo g -&lt;span class=&quot;built_in&quot;&gt;debug&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo s --&lt;span class=&quot;built_in&quot;&gt;debug&lt;/span&gt;  &amp;amp;&amp;amp;  tail -f &lt;span class=&quot;built_in&quot;&gt;debug&lt;/span&gt;.log&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;curl&quot;&gt;&lt;a href=&quot;#curl&quot; class=&quot;headerlink&quot; title=&quot;curl&quot;&gt;&lt;/a&gt;curl&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;post&lt;br&gt;&lt;code&gt;curl -u user:password -H &amp;quot;Content-Type: application/json;charset=UTF-8&amp;quot; -X POST -d &amp;#39;{JSON}&amp;#39;  URL&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;get&lt;br&gt;&lt;code&gt;curl -u user:password URL&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;docker&quot;&gt;&lt;a href=&quot;#docker&quot; class=&quot;headerlink&quot; title=&quot;docker&quot;&gt;&lt;/a&gt;docker&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;运行容器&lt;/p&gt;
+&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker run&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;i -t  创建交互式容器&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;d 创建守护式容器&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-name 为容器指定一个名称&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;查看运行的容器  &lt;/p&gt;
+&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker ps&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;a 查看所有容器运行状态&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;docker inspect 查看容器的详细信息&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;停止一个守护式容器 &lt;code&gt;docker stop&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;删除容器&lt;code&gt;docker rm&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;进入容器&lt;/p&gt;
+&lt;figure class=&quot;highlight applescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker exec -&lt;span class=&quot;keyword&quot;&gt;it&lt;/span&gt; container_name /bin/bash&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;exit&lt;/span&gt; 退出容器&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;结束容器  &lt;code&gt;exit container_name&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;查看镜像&lt;/p&gt;
+&lt;figure class=&quot;highlight 1c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker images &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;docker images &lt;span class=&quot;string&quot;&gt;| grep some_key&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;拷贝文件(宿主机和容器交互)&lt;/p&gt;
+&lt;figure class=&quot;highlight armasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;. 从容器内拷贝出来&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;label&quot;&gt;docker&lt;/span&gt; &lt;span class=&quot;preprocessor&quot;&gt;cp&lt;/span&gt; container:/path  hostMerchine_path&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;. 从宿主机拷贝进容器中&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;label&quot;&gt;docker&lt;/span&gt; &lt;span class=&quot;preprocessor&quot;&gt;cp&lt;/span&gt; hostMerchine_path container:/path&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;redis&quot;&gt;&lt;a href=&quot;#redis&quot; class=&quot;headerlink&quot; title=&quot;redis&quot;&gt;&lt;/a&gt;redis&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;使用 redis 客户端建立连接&lt;/p&gt;
+&lt;figure class=&quot;highlight elm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title&quot;&gt;redis&lt;/span&gt;-cli -p &lt;span class=&quot;foreign&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;port&lt;/span&gt; -h host_ip&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;keys 关键字模糊查询&lt;/p&gt;
+&lt;figure class=&quot;highlight gherkin&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;keys &lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;key_word&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;git&quot;&gt;&lt;a href=&quot;#git&quot; class=&quot;headerlink&quot; title=&quot;git&quot;&gt;&lt;/a&gt;git&lt;/h2&gt;&lt;figure class=&quot;highlight crmsh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;. git &lt;span class=&quot;keyword&quot;&gt;clone&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;-b&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;responsitory_url&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   git &lt;span class=&quot;keyword&quot;&gt;clone&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;-b&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;https&lt;/span&gt;://github.com/aresLove/java-core-learning-example ../java-core-learning-example&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;. git status&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;. git add --all&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;. git commit -a -m &lt;span class=&quot;string&quot;&gt;&quot;commet&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;. git push/git push origin &lt;span class=&quot;literal&quot;&gt;master&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      日常常用命令总结
+    
+    </summary>
+    
+      <category term="日常总结" scheme="http://aresLove.github.io/categories/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="常用命令" scheme="http://aresLove.github.io/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    
+      <category term="日常总结" scheme="http://aresLove.github.io/tags/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>多线程并发</title>
@@ -131,152 +289,6 @@
       <category term="前端技巧" scheme="http://aresLove.github.io/tags/%E5%89%8D%E7%AB%AF%E6%8A%80%E5%B7%A7/"/>
     
       <category term="前端适配" scheme="http://aresLove.github.io/tags/%E5%89%8D%E7%AB%AF%E9%80%82%E9%85%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用命令总结</title>
-    <link href="http://aresLove.github.io/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>http://aresLove.github.io/日常总结/常用命令/</id>
-    <published>2017-03-14T11:40:14.951Z</published>
-    <updated>2017-03-14T11:40:14.951Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;网络异常&quot;&gt;&lt;a href=&quot;#网络异常&quot; class=&quot;headerlink&quot; title=&quot;网络异常&quot;&gt;&lt;/a&gt;网络异常&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;常用方法排查&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;判定网络是否可达   &lt;code&gt;ping www.baidu.com&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;跟踪路由：判断网络节点是否畅通  &lt;code&gt;tracert -d www.baidu.com&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;用telnet命令来测试端口号是否正常打开还是关闭状态   &lt;code&gt;telnet www.baidu.com 2182&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;dns 解析(本地 hosts 配置：C:\Windows\System32\drivers\etc)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;刷新DNS缓存 &lt;code&gt;ipconfig /flushdns&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;进程处理&quot;&gt;&lt;a href=&quot;#进程处理&quot; class=&quot;headerlink&quot; title=&quot;进程处理&quot;&gt;&lt;/a&gt;进程处理&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;端口占用  &lt;ul&gt;
-&lt;li&gt;查看所有的端口占用情况  &lt;code&gt;netstat -ano&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;查看指定端口占用情况   &lt;code&gt;netstat -anno | findstr &amp;quot;端口号&amp;quot;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;查看PID对应的进程  &lt;code&gt;tasklist|findstr &amp;quot;进程号&amp;quot;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;终止一个进程   &lt;code&gt;taskkill /pid 进程号&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;强行终止进程   &lt;code&gt;taskkill /f /pid 进程号&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;常用windows命令&quot;&gt;&lt;a href=&quot;#常用windows命令&quot; class=&quot;headerlink&quot; title=&quot;常用windows命令&quot;&gt;&lt;/a&gt;常用windows命令&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;cd &lt;code&gt;cd /d target_url&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;cls &lt;code&gt;cls&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;常用linux命令&quot;&gt;&lt;a href=&quot;#常用linux命令&quot; class=&quot;headerlink&quot; title=&quot;常用linux命令&quot;&gt;&lt;/a&gt;常用linux命令&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;ls/ll &lt;/p&gt;
-&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;ls&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;ls&lt;/span&gt; -rlth&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;ll&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;ll&lt;/span&gt; -rlth&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;cat&lt;/p&gt;
-&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;file&lt;/span&gt; | &lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -C lines &lt;span class=&quot;string&quot;&gt;&quot;key&quot;&lt;/span&gt; | less&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;其中，&lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -C lines 标识关键字上下多少行;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;示例：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cat&lt;/span&gt; /home/web/web-server.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; | &lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -C &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;abc@163.com&quot;&lt;/span&gt; | less&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;表示：在 /home/web/web-server.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; 中查找关键字为abc@&lt;span class=&quot;number&quot;&gt;163&lt;/span&gt;.&lt;span class=&quot;keyword&quot;&gt;com&lt;/span&gt;的日志，并显示该关键字上下&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;行内容&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;实例：&lt;span class=&quot;keyword&quot;&gt;cat&lt;/span&gt; /hdapp/&lt;span class=&quot;number&quot;&gt;7001&lt;/span&gt;/crm/logs/crm-server.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; | &lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -C &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;扣减积分失败&quot;&lt;/span&gt; | less&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;pwd&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;pwd&lt;/span&gt;  查看当前目录&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;mkdir&lt;/p&gt;
-&lt;figure class=&quot;highlight dos&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;mkdir&lt;/span&gt; directory_name  创建文件夹&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;rm -rf (慎用：删除不可恢复)&lt;/p&gt;
-&lt;figure class=&quot;highlight stata&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;rm&lt;/span&gt; -rf directory_name  递归删除目录下的所有文件,删除操作不可恢复,使用需谨慎&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;一般禁用 &lt;span class=&quot;keyword&quot;&gt;rm&lt;/span&gt; 操作， 通过 mv 命令将“需要删除的”文件移动到指定目录，由定时任务定期清空&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;tab 自动补全&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;ctrl+c  终止执行（退出正在执行的操作）&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;mv &lt;/p&gt;
-&lt;figure class=&quot;highlight applescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mv &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt;   将文件（夹）剪切到某处&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;cp&lt;/p&gt;
-&lt;figure class=&quot;highlight applescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cp &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt;  将文件拷贝到某处&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;scp  &lt;a href=&quot;http://www.cnblogs.com/wanqieddy/archive/2012/08/02/2619928.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Linux下scp的用法&lt;/a&gt;、&lt;a href=&quot;http://www.cnblogs.com/tocy/p/linux_scp_remote-file-transfer.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;linux远程拷贝命令-scp&lt;/a&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight elixir&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;scp local_file remote_username&lt;span class=&quot;variable&quot;&gt;@remote_ip&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:remote_folder&lt;/span&gt;   从 本地 复制到 远程&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;scp remote_username&lt;span class=&quot;variable&quot;&gt;@remote_ip&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:remote_folder&lt;/span&gt; local_file   从 远程 复制到 本地&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;tail &lt;/p&gt;
-&lt;figure class=&quot;highlight applescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tail -f  &lt;span class=&quot;command&quot;&gt;log&lt;/span&gt;.&lt;span class=&quot;command&quot;&gt;log&lt;/span&gt;  实时输出查看&lt;span class=&quot;command&quot;&gt;log&lt;/span&gt;日志&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;tar/(zip/unzip、rar/unrar) &lt;a href=&quot;http://www.cnblogs.com/qq78292959/archive/2011/07/06/2099427.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Linux下的tar压缩解压缩命令详解&lt;/a&gt;、&lt;a href=&quot;http://www.cnblogs.com/wangkongming/p/4305962.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Linux中zip压缩和unzip解压缩命令详解&lt;/a&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;压缩&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tar -cvf target&lt;span class=&quot;class&quot;&gt;.tar&lt;/span&gt; source_files&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;zip target&lt;span class=&quot;class&quot;&gt;.zip&lt;/span&gt; source_files&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tar -xvf source&lt;span class=&quot;class&quot;&gt;.tar&lt;/span&gt; target&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;unzip source&lt;span class=&quot;class&quot;&gt;.zip&lt;/span&gt; target&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;总结&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.tar&lt;/span&gt; 用 tar -xvf 解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.gz&lt;/span&gt; 用 gzip -d或者gunzip 解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.tar&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.gz&lt;/span&gt;和*&lt;span class=&quot;class&quot;&gt;.tgz&lt;/span&gt; 用 tar -xzf 解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.bz2&lt;/span&gt; 用 bzip2 -d或者用bunzip2 解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.tar&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.bz2&lt;/span&gt;用tar -xjf 解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.Z&lt;/span&gt; 用 uncompress 解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.tar&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.Z&lt;/span&gt; 用tar -xZf 解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.rar&lt;/span&gt; 用 unrar e解压&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;、*&lt;span class=&quot;class&quot;&gt;.zip&lt;/span&gt; 用 unzip 解压&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;常用vim命令-linux下vim命令详解、linux下vi命令大全&quot;&gt;&lt;a href=&quot;#常用vim命令-linux下vim命令详解、linux下vi命令大全&quot; class=&quot;headerlink&quot; title=&quot;常用vim命令 linux下vim命令详解、linux下vi命令大全&quot;&gt;&lt;/a&gt;常用vim命令 &lt;a href=&quot;http://www.cnblogs.com/zhanglong0426/archive/2010/10/07/1845268.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;linux下vim命令详解&lt;/a&gt;、&lt;a href=&quot;http://www.cnblogs.com/88999660/articles/1581524.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;linux下vi命令大全&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;i 进入编辑模式&lt;/li&gt;
-&lt;li&gt;esc 退出编辑模式&lt;/li&gt;
-&lt;li&gt;:wq  保存修改并退出&lt;/li&gt;
-&lt;li&gt;:q!  放弃修改并退出&lt;/li&gt;
-&lt;li&gt;dd （非编辑模式下）删除当前行&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;mysql&quot;&gt;&lt;a href=&quot;#mysql&quot; class=&quot;headerlink&quot; title=&quot;mysql&quot;&gt;&lt;/a&gt;mysql&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;存储过程&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;查询数据库中的存储过程&lt;/p&gt;
-&lt;figure class=&quot;highlight oxygene&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;方法一：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;select&lt;/span&gt; `name` &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; MySQL.proc &lt;span class=&quot;keyword&quot;&gt;where&lt;/span&gt; db = &lt;span class=&quot;string&quot;&gt;&#39;your_db_name&#39;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; `&lt;span class=&quot;keyword&quot;&gt;type&lt;/span&gt;` = &lt;span class=&quot;string&quot;&gt;&#39;PROCEDURE&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;方法二：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;show &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;procedure&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;status&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;查看存储过程或函数的创建代码&lt;/p&gt;
-&lt;figure class=&quot;highlight oxygene&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;show &lt;span class=&quot;keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;procedure&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;proc_name&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;show &lt;span class=&quot;keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;func_name&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;常用快捷键&quot;&gt;&lt;a href=&quot;#常用快捷键&quot; class=&quot;headerlink&quot; title=&quot;常用快捷键&quot;&gt;&lt;/a&gt;常用快捷键&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;关闭窗口 &lt;code&gt;ctrl+w、ctrl+F4&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;关机&lt;code&gt;alt+F4&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;快速切换&lt;code&gt;alt+tab/ctrl+tab&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;快速锁机&lt;code&gt;win+l&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;hexo&quot;&gt;&lt;a href=&quot;#hexo&quot; class=&quot;headerlink&quot; title=&quot;hexo&quot;&gt;&lt;/a&gt;hexo&lt;/h2&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title&quot;&gt;hexo&lt;/span&gt; clean&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo g -&lt;span class=&quot;built_in&quot;&gt;debug&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo s --&lt;span class=&quot;built_in&quot;&gt;debug&lt;/span&gt;  &amp;amp;&amp;amp;  tail -f &lt;span class=&quot;built_in&quot;&gt;debug&lt;/span&gt;.log&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;curl&quot;&gt;&lt;a href=&quot;#curl&quot; class=&quot;headerlink&quot; title=&quot;curl&quot;&gt;&lt;/a&gt;curl&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;post&lt;br&gt;&lt;code&gt;curl -u user:password -H &amp;quot;Content-Type: application/json;charset=UTF-8&amp;quot; -X POST -d &amp;#39;{JSON}&amp;#39;  URL&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;get&lt;br&gt;&lt;code&gt;curl -u user:password URL&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;docker&quot;&gt;&lt;a href=&quot;#docker&quot; class=&quot;headerlink&quot; title=&quot;docker&quot;&gt;&lt;/a&gt;docker&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;运行容器&lt;/p&gt;
-&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker run&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;i -t  创建交互式容器&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;d 创建守护式容器&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-name 为容器指定一个名称&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;查看运行的容器  &lt;/p&gt;
-&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker ps&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;a 查看所有容器运行状态&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;docker inspect 查看容器的详细信息&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;停止一个守护式容器 &lt;code&gt;docker stop&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;删除容器&lt;code&gt;docker rm&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;进入容器&lt;/p&gt;
-&lt;figure class=&quot;highlight applescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker exec -&lt;span class=&quot;keyword&quot;&gt;it&lt;/span&gt; container_name /bin/bash&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;exit&lt;/span&gt; 退出容器&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;结束容器  &lt;code&gt;exit container_name&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;查看镜像&lt;figure class=&quot;highlight 1c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker images &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;docker images &lt;span class=&quot;string&quot;&gt;| grep some_key&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;git&quot;&gt;&lt;a href=&quot;#git&quot; class=&quot;headerlink&quot; title=&quot;git&quot;&gt;&lt;/a&gt;git&lt;/h2&gt;&lt;figure class=&quot;highlight crmsh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;. git &lt;span class=&quot;keyword&quot;&gt;clone&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;-b&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;responsitory_url&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   git &lt;span class=&quot;keyword&quot;&gt;clone&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;-b&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;https&lt;/span&gt;://github.com/aresLove/java-core-learning-example ../java-core-learning-example&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;. git status&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;. git add --all&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;. git commit -a -m &lt;span class=&quot;string&quot;&gt;&quot;commet&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;. git push/git push origin &lt;span class=&quot;literal&quot;&gt;master&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      日常常用命令总结
-    
-    </summary>
-    
-      <category term="日常总结" scheme="http://aresLove.github.io/categories/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="常用命令" scheme="http://aresLove.github.io/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    
-      <category term="日常总结" scheme="http://aresLove.github.io/tags/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
